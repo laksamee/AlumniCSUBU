@@ -1,0 +1,16 @@
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+img.img-center {
+display: block;
+margin: 0 auto;
+width: 60%;
+height: 50%;
+}
+video {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+height: auto;
+}
