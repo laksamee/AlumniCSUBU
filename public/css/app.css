@@ -1918,7 +1918,7 @@ a.box:active {
 }
 
 .button.is-primary {
-  background-color: #00d1b2;
+  background-color: #4ACCD1;
   border-color: transparent;
   color: #fff;
 }
@@ -10863,7 +10863,7 @@ label.panel-block:hover {
 }
 
 .hero.is-primary {
-  background-color: #00d1b2;
+  background-color: #4ACCD1;
   color: #fff;
 }
 
@@ -19241,4 +19241,3 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   background: rgba(255, 56, 96, 0.9);
   color: #fff;
 }
-

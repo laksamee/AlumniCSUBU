@@ -7,6 +7,9 @@
     <title>CS-UBU Alumni</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
+
     <!-- Bootstrap core CSS     -->
     <link href="users/assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
@@ -16,6 +19,8 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <script src="js/go.js"></script>
+    <script id="code" src="js/take.js"></script>
 </head>
 
 <body>
@@ -159,6 +164,7 @@
                                                         <input type="text" value="{{Auth::user()->generation}}" name ="generation" class="form-control">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-6">
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">อีเมล์</label>
@@ -187,11 +193,67 @@
                                           <input type="file" name="video" onchange="showaddvideo.call(this)">
                                         </div>
                                       </div>
+
+
                                         <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
                                         <div class="clearfix"></div>
                                     </form>
+
+
                                   </div>
                                 </div>
+
+                                <body onload="init()">
+                                <div id="sample">
+                                  <div id="myDiagramDiv" style=" height: 500px"></div>
+                                  <!-- <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
+                                  <div class="col-md-3" >
+                                      <div class="form-group label-floating">
+                                          <label class="control-label">รุ่นพี่สายเทคสาขา</label>
+                                          <select name="take" class="form-control">
+                                              @foreach ($members as $member)
+                                                @if($member->type == 'member' && $member->generation < Auth::user()->generation )
+                                                      <option value="{{$member->id}}">{{$member->name}}</option>
+                                                @endif
+                                                @if(Auth::user()->take1 == $member->id )
+                                              <span>{{$member->name}}</span>
+                                              @endif
+
+                                              @endforeach
+                                          </select>
+
+                                      </div> -->
+                                  </div>
+                                  <!-- <div class="col-md-3" >
+                                      <div class="form-group label-floating">
+                                              @foreach ($members as $member)
+                                                @if(Auth::user()->take1 == $member->id )
+                                                <label class="control-label">รุ่นพี่สายเทคสาขา</label>
+                                                  <h4>{{$member->name}}</h4>
+                                              @endif
+                                              @endforeach
+
+
+                                      </div>
+                                  </div> -->
+                                  <!-- <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                  <div class="clearfix"></div>
+                                </form> -->
+
+                                  <div>
+                                    <textarea id="mySavedModel" style="width:100%;height:250px" hidden>
+                                { "class": "go.TreeModel",
+                                  "nodeDataArray": [
+                                {"key":1, "name":"Stella Payne Diaz", "title":"CEO"},
+                                {"key":2, "name":"Luke Warm", "title":"VP Marketing/Sales", "parent":1}
+
+
+                                 ]
+                                }
+                                    </textarea>
+                                  </div>
+                                </div>
+                              </body>
                                 <!-- ====================================/แก้ไขข้อมูลส่วนตัว===================================================== -->
                         </div>
                     </div>
@@ -247,8 +309,5 @@
       }
     }
     </script><!-- โชว์วิดีโอตัวอย่างโปรแกรมก่อนอัพโหลด -->
-
-
-
 
 </html>

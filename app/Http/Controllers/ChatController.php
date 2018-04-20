@@ -107,7 +107,6 @@ class ChatController extends Controller
         })->orWhere(function ($query) use ($id) {
             $query->where('user_id', '=', $id)->where('friend_id', '=', Auth::user()->id);
         })->get();
-
         return $chats;
     }
 

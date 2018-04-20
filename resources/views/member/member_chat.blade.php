@@ -121,7 +121,7 @@
                                               <div class="contain is-pulled-right">
                                                   <a href="member_listfriend" class="is-link"><i class="fa fa-arrow-left"></i> Go Back </a>
                                               </div>
-                                                {{ $friend->name }}
+                                                {{$friend->name}}
                                                 <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:friendid="{{ $friend->id }}"></chat>
                                             </div>
                                         </div>
@@ -137,8 +137,6 @@
 </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
-<!--   Core JS Files   -->
-<!--   Core JS Files   -->
 <script src="users/assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="users/assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="users/assets/js/material.min.js" type="text/javascript"></script>
@@ -150,8 +148,7 @@
 <script src="users/assets/js/perfect-scrollbar.jquery.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="users/assets/js/bootstrap-notify.js"></script>
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
 <!-- Material Dashboard javascript methods -->
 <script src="users/assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->

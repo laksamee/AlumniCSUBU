@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\News;
+use App\User;
 use DB;
+use Mail;
 
 
 class controllernews extends Controller
@@ -19,6 +21,8 @@ class controllernews extends Controller
 
   public function add_news(Request $request)
   {
+  $user = User::select('email')->get();
+  $emails = array_pluck($user, 'email');
   $news = new news();
   $news->name_user     = Input::get("name_user");
   $news->topic     = Input::get("topic");
@@ -40,6 +44,12 @@ class controllernews extends Controller
     $file->move(public_path().'/news/video',$file->getClientOriginalName());
     $news->video = $file->getClientOriginalName();
   }
+  Mail::send('admin/sendmail/mail_news', compact('news'), function($message) use ($emails) {
+    $message->to($emails);
+    $message->subject
+        (Input::get("topic"));
+     $message->from('laksamee.pr.57@ubu.ac.th','Alumni CS UBU');
+  });
 
   $news->save();
   return Redirect('/dashboard');

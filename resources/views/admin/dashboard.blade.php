@@ -787,10 +787,7 @@
 <script src="users/assets/js/arrive.min.js"></script>
 <!--  PerfectScrollbar Library -->
 <script src="users/assets/js/perfect-scrollbar.jquery.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="users/assets/js/bootstrap-notify.js"></script>
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
 <!-- Material Dashboard javascript methods -->
 <script src="users/assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->

@@ -26,7 +26,8 @@ class controllermember extends Controller
     $user->email      = Input::get("email");
     $user->years      = Input::get("years");
     $user->address    = Input::get("address");
-    $user->password   = Hash::make(str_random(6));
+    $pass             = str_random(6);
+    $user->password   = Hash::make($pass);
     $user->remember_token = Hash::make(openssl_random_pseudo_bytes(30));
     $user->type   = 'member';
     $user->status   = 'confirm';
@@ -46,7 +47,11 @@ class controllermember extends Controller
       $user->video_project = $file->getClientOriginalName();
     }
 
-    Mail::to('laksamee.pr.57@ubu.ac.th')->send(new mail_member);
+    Mail::send('admin/sendmail/mail_member_add',compact('user','pass'), function($message){
+       $message->to(Input::get("email"),Input::get("name"))->subject
+          ('ลงทะเบียนสมาชิกศิษย์เก่าสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยอุบลราชธานี');
+       $message->from('laksamee.pr.27@ubu.ac.th','Alumni CS-UBU');
+    });
     $user->save();
     return Redirect('/dashboard');
   }

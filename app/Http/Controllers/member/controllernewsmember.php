@@ -54,8 +54,8 @@ public function edit_news(Request $request, $id)
 {
     $news = news::find($id);
     $news->name_user        = $request->name_user;
-    $news->topic   = $request->topic;
-    $news->detail      = $request->detail;
+    $news->topic            = $request->topic;
+    $news->detail           = $request->detail;
     if($request->file('image')){ //Upload Image
       $file = Input::file('image');
       $file->move(public_path().'/news/img',$file->getClientOriginalName());

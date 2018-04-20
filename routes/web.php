@@ -27,6 +27,8 @@ Auth::routes();
 
 
 Route::get('/index', 'indexController@index');
+Route::get('/pagereset', 'passwordresetController@index');
+Route::get('/passwordreset', 'passwordresetController@reset');
 
 Route::get('/member&{id}', 'indexController@memberdetial');
 
@@ -100,6 +102,7 @@ Route::get('memberdashboard', 'member\controllermemberdashboard@index');
 
 Route::get('member_profile', 'member\controllermemberprofile@member_profile');
 Route::post('member_updateprofile&{id}', 'member\controllermemberprofile@member_updateprofile');
+Route::get('member_updatetake&{id}', 'member\controllermemberprofile@member_updatetake');
 
 Route::get('member_listfriend', 'ChatController@list_friends');
 Route::get('member_chat&{id}', 'ChatController@show')->middleware('auth')->name('member_chat.show');

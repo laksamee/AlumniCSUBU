@@ -58,10 +58,6 @@
             @auth
             <ul class="nav navbar-nav">
               <li><a href="/index">หน้าหลัก</a></li>
-              <li><a href="/index">เกี่ยวกับ</a></li>
-              <li><a href="/index">ข่าวสาร</a></li>
-              <li><a href="/index">ทำเนียบศิษย์เก่า</a></li>
-              <li  class="active"><a href="/blog">กระทู้</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -79,10 +75,6 @@
             @else
             <ul class="nav navbar-nav">
               <li ><a href="/index">หน้าหลัก</a></li>
-              <li><a href="/index">เกี่ยวกับ</a></li>
-              <li><a href="/index">ข่าวสาร</a></li>
-              <li><a href="/index">ทำเนียบศิษย์เก่า</a></li>
-              <li class="active"><a href="/blog">กระทู้</a></li>
             </ul>
           @endauth
         @endif

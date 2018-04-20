@@ -8,10 +8,14 @@
     <title>CS-UBU Alumni</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
     <!-- Bootstrap core CSS     -->
     <link href="users/assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
     <link href="users/assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="users/assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->

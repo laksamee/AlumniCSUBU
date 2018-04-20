@@ -13,7 +13,8 @@ class controllermemberprofile extends Controller
 {
   public function member_profile()
   {
-      return view('member/member_profile');
+      $members = User::orderBy('name', 'ASC')->get();
+      return view('member/member_profile')->with('members',$members );
   }
 
   public function member_updateprofile(Request $request, $id)
@@ -39,6 +40,15 @@ class controllermemberprofile extends Controller
       $file->move(public_path().'/user/video',$file->getClientOriginalName());
       $user->video_project = $file->getClientOriginalName();
     }
+
+    $user->save();
+    return Redirect()->back();
+  }
+
+  public function member_updatetake(Request $request, $id)
+  {
+    $user = User::find($id);
+    $user->take1        = $request->take;
 
     $user->save();
     return Redirect()->back();

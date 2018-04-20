@@ -134,9 +134,9 @@
                       <form action="{{ route('login') }}" method="post" role="form" class="contactForm lead">
                         @csrf
                         <div class="row">
-                          <div class="col-xs-6 col-sm-6 col-md-6">                            
+                          <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>อีเมล์ / รหัสนักศึกษา</label>
+                              <label>อีเมล / รหัสนักศึกษา</label>
                                 <input id="username" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="username" value="{{ old('email') }}" required autofocus>
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
