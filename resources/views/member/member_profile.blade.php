@@ -57,7 +57,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="member_listfriend">
+                        <a href="chat">
                             <i class="fa fa-comments"></i>
                             <p>chat</p>
                         </a>
@@ -85,7 +85,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="memberdashboard"> Dashboard </a>
+                        <a class="navbar-brand" href="member_profile"> User Profile </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -206,50 +206,56 @@
                                 <body onload="init()">
                                 <div id="sample">
                                   <div id="myDiagramDiv" style=" height: 500px"></div>
-                                  <!-- <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
+                                  <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
                                   <div class="col-md-3" >
                                       <div class="form-group label-floating">
                                           <label class="control-label">รุ่นพี่สายเทคสาขา</label>
                                           <select name="take" class="form-control">
                                               @foreach ($members as $member)
-                                                @if($member->type == 'member' && $member->generation < Auth::user()->generation )
+                                                @if( $member->generation < Auth::user()->generation )
+                                                      <option value="0">ไม่มี</option>
                                                       <option value="{{$member->id}}">{{$member->name}}</option>
                                                 @endif
-                                                @if(Auth::user()->take1 == $member->id )
-                                              <span>{{$member->name}}</span>
-                                              @endif
+
 
                                               @endforeach
                                           </select>
 
-                                      </div> -->
+                                      </div>
                                   </div>
-                                  <!-- <div class="col-md-3" >
+                                  <div class="col-md-3" >
                                       <div class="form-group label-floating">
                                               @foreach ($members as $member)
-                                                @if(Auth::user()->take1 == $member->id )
+                                                @if(Auth::user()->take == $member->id )
                                                 <label class="control-label">รุ่นพี่สายเทคสาขา</label>
                                                   <h4>{{$member->name}}</h4>
                                               @endif
                                               @endforeach
 
-
                                       </div>
-                                  </div> -->
-                                  <!-- <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
                                   <div class="clearfix"></div>
-                                </form> -->
+                                </form>
+
+
+
 
                                   <div>
-                                    <textarea id="mySavedModel" style="width:100%;height:250px" hidden>
-                                { "class": "go.TreeModel",
-                                  "nodeDataArray": [
-                                {"key":1, "name":"Stella Payne Diaz", "title":"CEO"},
-                                {"key":2, "name":"Luke Warm", "title":"VP Marketing/Sales", "parent":1}
+                                    <textarea id="mySavedModel" style="width:100%;height:250px" hidden >
 
+                                { "class": "go.TreeModel",
+
+                                  "nodeDataArray": [
+                                    @foreach ($members as $val)
+                                  {"key":{{$val->id}},"name":"{{$val->name}}", "years":"{{$val->years}}", "gen":"{{$val->generation}}", "parent":{{$val->take}}},
+                                  @endforeach
+
+                                  {"key":{{Auth::user()->id}}, "name":"{{Auth::user()->name}}", "years":"{{Auth::user()->years}}"}
 
                                  ]
                                 }
+
                                     </textarea>
                                   </div>
                                 </div>

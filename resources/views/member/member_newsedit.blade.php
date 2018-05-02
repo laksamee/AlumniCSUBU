@@ -52,7 +52,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href="member_listfriend">
+                      <a href="chat">
                           <i class="fa fa-comments"></i>
                           <p>chat</p>
                       </a>

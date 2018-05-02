@@ -84,6 +84,7 @@ function init() {
             defaultAlignment: go.Spot.Left
           },
           $(go.RowColumnDefinition, { column: 2, width: 4 }),
+          
           $(go.TextBlock, textStyle(),  // the name
             {
               row: 0, column: 0, columnSpan: 5,
@@ -92,6 +93,7 @@ function init() {
               minSize: new go.Size(10, 16)
             },
             new go.Binding("text", "name").makeTwoWay()),
+
           $(go.TextBlock, "ปีที่จบ : ", textStyle(),
             { row: 1, column: 0 }),
           $(go.TextBlock, textStyle(),
@@ -101,10 +103,11 @@ function init() {
               minSize: new go.Size(10, 14),
               margin: new go.Margin(0, 0, 0, 3)
             },
-            new go.Binding("text", "title").makeTwoWay()),
-          $(go.TextBlock, textStyle(),
-            { row: 2, column: 0 },
-            new go.Binding("text", "key", function(v) {return "รุ่นที่ : " + v;})),
+            new go.Binding("text", "years").makeTwoWay()),
+
+            $(go.TextBlock, textStyle(),
+              { row: 2, column: 0 },
+              new go.Binding("text", "gen", function(v) {return "รุ่นที่ : " + v;})),
 
         )  // end Table Panel
       ) // end Horizontal Panel

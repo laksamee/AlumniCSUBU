@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
+
 use App\Chat;
 use App\User;
 use Auth;
@@ -14,16 +14,10 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $friends = Auth::user()->friends();
-    //     return view('chat.index')->withFriends($friends);
-    // }
-
-    public function list_friends()
+    public function index()
     {
-        $friends = User::orderBy('generation', 'ASC')->get();
-        return view('member/member_listfriend')->withFriends($friends);
+        $friends = Auth::user()->get();
+        return view('member.member_listfriend')->withFriends($friends);
     }
 
     /**
@@ -53,19 +47,11 @@ class ChatController extends Controller
      * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-
-     public function show($id)
-     {
-         $friend = User::find($id);
-         return view('member.member_chat')->withFriend($friend);
-     }
-
-
-    // public function show($id)
-    // {
-    //     $friend = User::find($id);
-    //     return view('member/member_chat')->withFriend($friend);
-    // }
+    public function show($id)
+    {
+        $friend = User::find($id);
+        return view('chat.show')->withFriend($friend);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -107,6 +93,7 @@ class ChatController extends Controller
         })->orWhere(function ($query) use ($id) {
             $query->where('user_id', '=', $id)->where('friend_id', '=', Auth::user()->id);
         })->get();
+
         return $chats;
     }
 

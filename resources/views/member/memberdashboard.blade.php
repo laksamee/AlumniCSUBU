@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
     <!-- Bootstrap core CSS     -->
     <link href="users/assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
@@ -58,7 +57,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="member_listfriend">
+                        <a href="chat">
                             <i class="fa fa-comments"></i>
                             <p>chat</p>
                         </a>

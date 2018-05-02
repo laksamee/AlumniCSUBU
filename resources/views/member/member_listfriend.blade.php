@@ -8,7 +8,7 @@
     <title>CS-UBU Alumni</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-    
+
     <!-- Bootstrap core CSS     -->
     <link href="users/assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
@@ -57,7 +57,7 @@
                         </a>
                     </li>
                     <li class="active">
-                        <a href="member_listfriend">
+                        <a href="chat">
                             <i class="fa fa-comments"></i>
                             <p>chat</p>
                         </a>
@@ -84,7 +84,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="member_chat">Chat </a>
+                        <a class="navbar-brand" href="member_listfriend">Chat </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -133,20 +133,11 @@
                                                 @else
                                                 <img src="/user/profile/no_img.jpg" class="img-circle" width="200" >
                                                 @endif</center></span></td>
-                                            <td>  <a href="member_chat&{{$friend->id}}" class="panel-block" style="justify-content: space-between;">
+                                            <td>  <a href="chat&{{$friend->id}}" class="panel-block" style="justify-content: space-between;">
                                                       {{ $friend->name }}
                                                       <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineuser="onlineUsers"></onlineuser>
                                                   </a></td>
                                             <td>{{$friend->generation}}</td>
-                                            <!-- <td class="td-actions text-right">
-
-
-                                                <button type="button" rel="tooltip" title="ลบแชท" class="btn btn-danger btn-simple btn-xs">
-                                                      <a href=""><i class="material-icons" style="color:red">close</i></a>
-                                                </button>
-                                            </td> -->
-
-
                                         </tr>
                                         @endif
                                       </tbody>
@@ -171,6 +162,7 @@
 
         </div>
     </div>
+
 </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
@@ -188,3 +180,5 @@
 <script src="users/assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="users/assets/js/demo.js"></script>
+
+</html>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Session;
+use Mail;
 class RegisterController extends Controller
 {
     /*
@@ -65,7 +66,7 @@ class RegisterController extends Controller
      protected function create(array $data)
      {
         Session::flash('success');
-         return User::create([
+         $user = User::create([
              'id_std' => $data['idstd'],
              'name' => $data['name'],
              'years' => $data['years'],
@@ -74,5 +75,14 @@ class RegisterController extends Controller
              'type' =>'member',
              'status' => 'unconfirm',
          ]);
+
+         $emails = User::select('email')->where('type','admin')->get();
+         $email = array_pluck($emails, 'email');
+         Mail::send('sendmail/mail_member_register', compact('user'), function($message) use ($email) {
+           $message->to($email);
+           $message->subject('ตรวจสอบรายชื่อลงทะเบียนศิษย์เกาสาขาวิทยาการคอมพิวเตอร์ ');
+            $message->from('laksamee.pr.57@ubu.ac.th','Alumni CS UBU');
+         });
+         return $user;
      }
 }

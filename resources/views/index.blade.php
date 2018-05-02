@@ -207,7 +207,7 @@
 
                                   @if ($errors->has('name'))
                                       <span class="invalid-feedback">
-                                          <strong>{{ $errors->first('name') }}</strong>
+                                          <label style="color:red;">{{ $errors->first('name') }}</label>
                                       </span>
                                   @endif
 
@@ -218,8 +218,12 @@
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                               <label>ปีที่จบการศึกษา</label>
-
-                                  <input id="years" type="number" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="years" value="" required autofocus>
+                                  <input id="years" type="number" class="form-control{{ $errors->has('years') ? ' is-invalid' : '' }}" name="years" value="" required autofocus>
+                                  @if ($errors->has('years'))
+                                      <span class="invalid-feedback">
+                                          <label style="color:red;">{{ $errors->first('years') }}</label>
+                                      </span>
+                                  @endif
                             </div>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-6">
@@ -229,7 +233,7 @@
 
                               @if ($errors->has('email'))
                                   <span class="invalid-feedback">
-                                      <strong>{{ $errors->first('email') }}</strong>
+                                      <label style="color:red;">{{ $errors->first('email') }}</label>
                                   </span>
                               @endif
                             </div>
@@ -241,10 +245,10 @@
                             <div class="form-group">
                               <label>รหัสผ่าน</label>
                               <input id="pass" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                  <label><span style = "display: inline-block;color:red;" id="result"></span>  </label>
+                                  <!-- <label><span style = "display: inline-block;color:red;" id="result"></span>  </label> -->
                               @if ($errors->has('password'))
                                   <span class="invalid-feedback">
-                                      <strong>{{ $errors->first('password') }}</strong>
+                                      <label style="color:red;">{{ $errors->first('password') }}</label>
                                   </span>
                               @endif
                             </div>

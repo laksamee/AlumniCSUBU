@@ -47,7 +47,7 @@ class controllermember extends Controller
       $user->video_project = $file->getClientOriginalName();
     }
 
-    Mail::send('admin/sendmail/mail_member_add',compact('user','pass'), function($message){
+    Mail::send('sendmail/mail_member_add',compact('user','pass'), function($message){
        $message->to(Input::get("email"),Input::get("name"))->subject
           ('ลงทะเบียนสมาชิกศิษย์เก่าสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยอุบลราชธานี');
        $message->from('laksamee.pr.27@ubu.ac.th','Alumni CS-UBU');

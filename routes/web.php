@@ -11,17 +11,22 @@
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/chat', 'ChatController@index')->middleware('auth')->name('chat.index');
-// Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.show');
-// Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
-// Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
-Auth::routes();
+Route::get('/chat', 'ChatController@index')->middleware('auth')->name('chat.index');
+Route::get('/chat&{id}', 'ChatController@show')->middleware('auth')->name('chat.show');
+Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
+Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
+ Auth::routes();
 
 
 
@@ -103,11 +108,16 @@ Route::get('memberdashboard', 'member\controllermemberdashboard@index');
 Route::get('member_profile', 'member\controllermemberprofile@member_profile');
 Route::post('member_updateprofile&{id}', 'member\controllermemberprofile@member_updateprofile');
 Route::get('member_updatetake&{id}', 'member\controllermemberprofile@member_updatetake');
-
+//chat
 Route::get('member_listfriend', 'ChatController@list_friends');
-Route::get('member_chat&{id}', 'ChatController@show')->middleware('auth')->name('member_chat.show');
+Route::get('member_chat&{id}', 'ChatController@show')->middleware('auth');
 Route::post('member_chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
+
+//Charts
+//Route::get('chats', 'member\ChatController@index_chat');
+
+
 
 
 Route::post('addnews_member', 'member\controllernewsmember@add_news');

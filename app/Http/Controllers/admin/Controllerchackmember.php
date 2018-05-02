@@ -23,7 +23,7 @@ class Controllerchackmember extends Controller
         $user->status     = 'confirm';
 
 
-          Mail::send('admin/sendmail/mail_confirm', array('user'=>$user), function($message) use ($user) {
+          Mail::send('sendmail/mail_confirm', array('user'=>$user), function($message) use ($user) {
              $message->to($user->email)->subject
                 ('ตรวจสอบยืนยันการลงทะเบียนศิษย์เก่าสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยอุบลราชธานี');
              $message->from('laksamee.pr.57@ubu.ac.th','Alumni CS UBU');

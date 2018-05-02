@@ -13,7 +13,7 @@ class controllermemberprofile extends Controller
 {
   public function member_profile()
   {
-      $members = User::orderBy('name', 'ASC')->get();
+      $members = User::where('type','member')->orderBy('name', 'ASC')->get();
       return view('member/member_profile')->with('members',$members );
   }
 
@@ -48,7 +48,7 @@ class controllermemberprofile extends Controller
   public function member_updatetake(Request $request, $id)
   {
     $user = User::find($id);
-    $user->take1        = $request->take;
+    $user->take        = $request->take;
 
     $user->save();
     return Redirect()->back();
