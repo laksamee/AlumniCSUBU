@@ -40,7 +40,7 @@
                 <ul class="nav">
                   <li >
                       <a href="index">
-                          <i class="material-icons">home</i>
+                          <i class="material-icons">home </i>
                           <p>home</p>
                       </a>
                   </li>

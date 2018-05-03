@@ -31,7 +31,6 @@
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -505,6 +504,7 @@
 
   <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
   <!-- Core JavaScript Files -->
+
   <script src="index_alumni_csubu/js/jquery.min.js"></script>
   <script src="index_alumni_csubu/js/bootstrap.min.js"></script>
   <script src="index_alumni_csubu/js/jquery.easing.min.js"></script>
