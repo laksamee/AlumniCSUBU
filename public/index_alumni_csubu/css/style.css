@@ -760,7 +760,7 @@ hr.bold {
 }
 
 .intro-content {
-	background: url(../img/dummy/bg1.jpg) no-repeat top center;
+  background:#fff;
 	padding:200px 0 60px;
 }
 .intro-content.intro-nobg {
@@ -769,7 +769,6 @@ hr.bold {
 	margin:0;
 	padding:140px 0 60px;
 }
-
 
 .slogan {
 	margin-bottom: 20px;

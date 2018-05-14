@@ -17,7 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('chat', require('./components/Chat.vue'));
 Vue.component('chat-composer', require('./components/ChatComposer.vue'));
-Vue.component('onlineuser', require('./components/OnlineUser.vue'));
+
 
 const app = new Vue({
     el: '#app',
@@ -30,7 +30,7 @@ const app = new Vue({
       const friendId = $('meta[name="friendId"]').attr('content');
 
       if(friendId != undefined){
-        axios.post('/member_chat/getChat/'+friendId).then((response)=>{
+        axios.post('/chat/getChat/'+friendId).then((response)=>{
           this.chats = response.data;
         });
 

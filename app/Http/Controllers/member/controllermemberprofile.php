@@ -25,6 +25,8 @@ class controllermemberprofile extends Controller
     $user->years         = $request->years;
     $user->generation    = $request->generation;
     $user->email         = $request->email;
+    $user->address       = $request->address;
+    $user->office         = $request->office;
     if(Input::file('member_img')){ //Upload Image
       $file = Input::file('member_img');
       $file->move(public_path().'/user/profile',$file->getClientOriginalName());

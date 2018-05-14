@@ -53,21 +53,21 @@
           @if (Route::has('login'))
             @auth
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#intro">หน้าหลัก</a></li>
-              <li><a href="#about">เกี่ยวกับ</a></li>
-              <li><a href="#news">ข่าวสาร</a></li>
-              <li><a href="#palace">ทำเนียบศิษย์เก่า</a></li>
-              <li><a href="/blog">กระทู้</a></li>
+              <li class="active"><a href="#intro">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#palace">Members</a></li>
+              <li><a href="/blog">Blog</a></li>
               @if(Auth::user()->type == 'member')
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
                   <ul class="dropdown-menu">
 
-                    <li><a href="/memberdashboard"><i class="fa fa-user"></i> โปรไฟล์ของฉัน</a></li>
+                    <li><a href="/memberdashboard"><i class="fa fa-user"></i> Profile</a></li>
                     <li><a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+                        <i class="fa fa-sign-out"></i> Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form></li>
@@ -78,11 +78,11 @@
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
-                              <li><a href="/dashboard"><i class="fa fa-user"></i> โปรไฟล์ของฉัน</a></li>
+                              <li><a href="/dashboard"><i class="fa fa-user"></i> Profile</a></li>
                               <li><a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                                  <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+                                  <i class="fa fa-sign-out"></i> Logout</a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       {{ csrf_field() }}
                                   </form></li>
@@ -92,11 +92,11 @@
             </ul>
             @else
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#intro">หน้าหลัก</a></li>
-                  <li><a href="#about">เกี่ยวกับ</a></li>
-                  <li><a href="#news">ข่าวสาร</a></li>
-                  <li><a href="#palace">ทำเนียบศิษย์เก่า</a></li>
-                  <li><a href="/blog">กระทู้</a></li>
+                  <li class="active"><a href="#intro">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#news">News</a></li>
+                  <li><a href="#palace">Members</a></li>
+                  <li><a href="/blog">Blog</a></li>
                 </ul>
           @endauth
         @endif
@@ -119,7 +119,7 @@
 
                   <div class="panel panel-skin">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> เข้าสู่ระบบ</h3>
+                      <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Login</h3>
                     </div>
                     <div class="panel-body">
                       @if (session('error'))
@@ -135,11 +135,11 @@
                         <div class="row">
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>อีเมล / รหัสนักศึกษา</label>
+                              <label>E-mail / Student ID</label>
                                 <input id="username" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="username" value="{{ old('email') }}" required autofocus>
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('email')}}</strong>
                                         </span>
                                     @endif
                             </div>
@@ -147,7 +147,7 @@
 
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <label>รหัสผ่าน</label>
+                                <label>Password</label>
                                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                     @if ($errors->has('password'))
@@ -159,12 +159,12 @@
                           </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                          <input type="submit" value="เข้าสู่ระบบ" class="btn btn-skin btn-block btn-lg">
+                          <input type="submit" value="Login" class="btn btn-skin btn-block btn-lg">
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                           <a href="{{ route('password.request') }}">
-                            <p class="lead-footer">* ลืมรหัสผ่าน</p></a>
+                            <p class="lead-footer">* Reset Password </p></a>
                         </div>
                       </div>
                     </form>
@@ -180,7 +180,7 @@
 
                   <div class="panel panel-skin">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> ลงทะเบียนสมาชิก</h3>
+                      <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Register</h3>
                     </div>
                     <div class="panel-body">
                         @if (session('success'))
@@ -195,13 +195,13 @@
                         <div class="row">
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>รหัสนักศึกษา</label>
+                              <label>Student ID</label>
                                   <input id="number" type="number" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="idstd" value="" required autofocus>
                             </div>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>ชื่อ-สกุล</label>
+                              <label>Name</label>
                                   <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                   @if ($errors->has('name'))
@@ -216,7 +216,7 @@
                         <div class="row">
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>ปีที่จบการศึกษา</label>
+                              <label>Years</label>
                                   <input id="years" type="number" class="form-control{{ $errors->has('years') ? ' is-invalid' : '' }}" name="years" value="" required autofocus>
                                   @if ($errors->has('years'))
                                       <span class="invalid-feedback">
@@ -227,7 +227,7 @@
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>อีเมล</label>
+                              <label>E-mail</label>
                               <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                               @if ($errors->has('email'))
@@ -242,7 +242,7 @@
                         <div class="row">
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>รหัสผ่าน</label>
+                              <label>Password</label>
                               <input id="pass" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                   <!-- <label><span style = "display: inline-block;color:red;" id="result"></span>  </label> -->
                               @if ($errors->has('password'))
@@ -254,14 +254,14 @@
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                              <label>ยืนยันรหัสผ่าน</label>
+                              <label>Confirm Password</label>
                               <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                               <div class="validation"></div>
                             </div>
                           </div>
                         </div>
 
-                        <input type="submit" value="ลงทะเบียน" class="btn btn-skin btn-block btn-lg">
+                        <input type="submit" value="Register" class="btn btn-skin btn-block btn-lg">
 
                       </form>
                     </div>
@@ -313,7 +313,7 @@
           <div class="col-lg-8 col-lg-offset-2">
             <div class="wow lightSpeedIn" data-wow-delay="0.1s">
               <div class="section-heading text-center">
-                <h2 class="h-bold">เกี่ยวกับ</h2>
+                <h2 class="h-bold">About</h2>
               </div>
             </div>
             <div class="divider-short"></div>
@@ -394,7 +394,7 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="wow fadeInDown" data-wow-delay="0.1s">
                 <div class="section-heading text-center">
-                  <h2 class="h-bold">ข่าวสาร</h2>
+                  <h2 class="h-bold">News</h2>
                 </div>
               </div>
               <div class="divider-short"></div>
@@ -434,7 +434,7 @@
           <div class="col-lg-8 col-lg-offset-2">
             <div class="wow fadeInDown" data-wow-delay="0.1s">
               <div class="section-heading text-center">
-                <h2 class="h-bold">ทำเนียบศิษย์เก่า</h2>
+                <h2 class="h-bold">Member</h2>
               </div>
             </div>
             <div class="divider-short"></div>
@@ -461,7 +461,7 @@
                     <div class="cbp-caption-activeWrap">
                       <div class="cbp-l-caption-alignCenter">
                         <div class="cbp-l-caption-body">
-                          <div class="cbp-l-caption-text">รายละเอียด</div>
+                          <div class="cbp-l-caption-text">Detail</div>
                         </div>
                       </div>
                     </div>

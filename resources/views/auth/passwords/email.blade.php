@@ -59,7 +59,7 @@
 
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <label class="label">E-Mail Address</label>
+                                <label class="label">E-mail</label>
                             </div>
 
                             <div class="field-body">

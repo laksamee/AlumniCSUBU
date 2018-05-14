@@ -57,15 +57,15 @@
           @if (Route::has('login'))
             @auth
             <ul class="nav navbar-nav">
-              <li><a href="/index">หน้าหลัก</a></li>
+              <li><a href="/index">Home</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/memberdashboard"><i class="fa fa-user"></i> โปรไฟล์ของฉัน</a></li>
+                <li><a href="/memberdashboard"><i class="fa fa-user"></i> Profile</a></li>
                 <li><a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                    <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+                    <i class="fa fa-sign-out"></i> Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form></li>
@@ -74,7 +74,7 @@
             </ul>
             @else
             <ul class="nav navbar-nav">
-              <li ><a href="/index">หน้าหลัก</a></li>
+              <li ><a href="/index">Home</a></li>
             </ul>
           @endauth
         @endif
@@ -88,9 +88,9 @@
       <section id="news" class="home-section bg-gray paddingbot-60">
         <div class="container marginbot-50">
           <ol class="breadcrumb">
-            <li><a href="/index">หน้าหลัก</a></li>
-            <li><a href="/blog">กระทู้ทั้งหมด</a></li>
-            <li class="active">ความคิดเห็นทั้งหมด</li>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/blog">All Blog</a></li>
+            <li class="active">Comments</li>
           </ol>
 
           <div class="row">
@@ -118,7 +118,7 @@
             <!-- Comment -->
               <div class="row">
     						<div class="col-md-12 col-sm-12">
-                  <h2 class="page-header">ความคิดเห็น</h2>
+                  <h2 class="page-header">Comments</h2>
                     <section class="comment-list">
                       @foreach ($comment as $val)
                       <article class="row">
@@ -161,34 +161,34 @@
 
 
             <div class="col-md-4 col-sm-4">
-              <h3>แสดงความคิดเห็น</h3><hr>
+              <h3>Comments</h3><hr>
               @if (Route::has('login'))
                 @auth
     				<div class="row">
               <form action="postcomment&{{$topic->id}}" method="get" >
     						<div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>ชื่อ</label>
+                    <label>Name</label>
                     <input type="text" name="name" value="{{Auth::user()->name}}"  class="form-control input-md" data-rule="minlen:3"required >
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>อีเมล์</label>
+                    <label>E-mail</label>
                     <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control input-md" data-rule="minlen:3" required>
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>รายละเอียด</label>
+                    <label>Detail</label>
                     <textarea type="text"  name="detail" class="form-control input-md" required ></textarea>
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-4 col-sm-4">
-                  <input type="submit" value="ยืนยัน" class="btn btn-skin btn-block btn-lg">
+                  <input type="submit" value="submit" class="btn btn-skin btn-block btn-lg">
                 </div>
               </form>
     				</div>
@@ -197,27 +197,27 @@
               <form action="postcomment&{{$topic->id}}" method="get" >
     						<div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>ชื่อ</label>
+                    <label>Name</label>
                     <input type="text" name="name"  class="form-control input-md" data-rule="minlen:3"required >
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>อีเมล์</label>
+                    <label>E-mail</label>
                     <input type="email" name="email"  class="form-control input-md" data-rule="minlen:3" required>
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>รายละเอียด</label>
+                    <label>Detail</label>
                     <textarea type="text"  name="detail" class="form-control input-md" required ></textarea>
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-4 col-sm-4">
-                  <input type="submit" value="ยืนยัน" class="btn btn-skin btn-block btn-lg">
+                  <input type="submit" value="submit" class="btn btn-skin btn-block btn-lg">
                 </div>
               </form>
     				</div>

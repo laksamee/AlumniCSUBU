@@ -80,7 +80,7 @@ class RegisterController extends Controller
          $email = array_pluck($emails, 'email');
          Mail::send('sendmail/mail_member_register', compact('user'), function($message) use ($email) {
            $message->to($email);
-           $message->subject('ตรวจสอบรายชื่อลงทะเบียนศิษย์เกาสาขาวิทยาการคอมพิวเตอร์ ');
+           $message->subject('ตรวจสอบรายชื่อลงทะเบียนศิษย์เก่าสาขาวิทยาการคอมพิวเตอร์ ');
             $message->from('laksamee.pr.57@ubu.ac.th','Alumni CS UBU');
          });
          return $user;

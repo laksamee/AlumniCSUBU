@@ -107,7 +107,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">แก้ไขข้อมูลส่วนตัว</span><h2>
+                                            <h2><span class="nav-tabs-title">Edit Profile</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -134,19 +134,19 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ศิษย์เก่า</label>
+                                                        <label class="control-label">Member</label>
                                                         <input type="text" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">รหัสนักศึกษา</label>
+                                                        <label class="control-label">Student ID</label>
                                                         <input type="number" name="idstd" value="{{Auth::user()->id_std}}" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ชื่อ - สกุล</label>
+                                                        <label class="control-label">Name</label>
                                                         <input type="text" value="{{Auth::user()->name}}" name="name"class="form-control">
                                                     </div>
                                                 </div>
@@ -154,28 +154,42 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ปีที่จบการศึกษา</label>
+                                                        <label class="control-label">Years</label>
                                                         <input type="number" value="{{Auth::user()->years}}" name="years"class="form-control" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">รุ่นที่</label>
+                                                        <label class="control-label">Generation</label>
                                                         <input type="text" value="{{Auth::user()->generation}}" name ="generation" class="form-control">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">อีเมล์</label>
+                                                        <label class="control-label">E-mail</label>
                                                         <input type="email" value="{{Auth::user()->email}}" name="email" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Address</label>
+                                                        <input type="text" value="{{Auth::user()->address}}" name="address"class="form-control" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Office</label>
+                                                        <input type="text" value="{{Auth::user()->office}}" name="office" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                  <label>เอกสารโครงงาน</label>
+                                                  <label>Senior project file</label>
                                                   @if( Auth::user()->senior_project != null)
                                                   <a href="/user/file/{{Auth::user()->senior_project}}"><i class=""></i>{{Auth::user()->senior_project}}</a>
                                                   @endif
@@ -186,7 +200,7 @@
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-12 col-xlg-12 col-md-12">
-                                          <label>ตัวอย่างการใช้งานโปรแกรม</label>
+                                          <label>Video</label>
                                             <center class="m-t-30">
                                               <video id ="membervideo" class="img-thumbnail image" src="user\video_project\{{Auth::user()->video_project}}" width="80%" height="99%" controls></video>
                                             </center>
@@ -195,7 +209,7 @@
                                       </div>
 
 
-                                        <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                         <div class="clearfix"></div>
                                     </form>
 
@@ -209,11 +223,11 @@
                                   <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
                                   <div class="col-md-3" >
                                       <div class="form-group label-floating">
-                                          <label class="control-label">รุ่นพี่สายเทคสาขา</label>
+                                          <label class="control-label">Take</label>
                                           <select name="take" class="form-control">
                                               @foreach ($members as $member)
                                                 @if( $member->generation < Auth::user()->generation )
-                                                      <option value="0">ไม่มี</option>
+                                                      <option value="0">No</option>
                                                       <option value="{{$member->id}}">{{$member->name}}</option>
                                                 @endif
 
@@ -227,14 +241,14 @@
                                       <div class="form-group label-floating">
                                               @foreach ($members as $member)
                                                 @if(Auth::user()->take == $member->id )
-                                                <label class="control-label">รุ่นพี่สายเทคสาขา</label>
+                                                <label class="control-label">Take</label>
                                                   <h4>{{$member->name}}</h4>
                                               @endif
                                               @endforeach
 
                                       </div>
                                   </div>
-                                  <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                  <button type="submit" class="btn btn-primary pull-right">submit</button>
                                   <div class="clearfix"></div>
                                 </form>
 

@@ -26,7 +26,7 @@ class indexController extends Controller
         return view('/newsdetail',compact('detail'));
     }
 
-    public function memberdetial($id)
+    public function memberdetail($id)
     {
         $user = User::find($id);
         return view('/member',compact('user'));

@@ -36,7 +36,7 @@ class controlleradmin extends Controller
       $file->move(public_path().'/user/profile',$file->getClientOriginalName());
       $user->profile = $file->getClientOriginalName();
     }
-          Mail::send('sendmail/mail_admin_add',compact('user','pass'), function($message){
+          Mail::send('admin/sendmail/mail_admin_add',compact('user','pass'), function($message){
              $message->to(Input::get("email"),Input::get("name"))->subject
                 ('ลงทะเบียนผู้ดูแลระบบ');
              $message->from('laksamee.pr.27@ubu.ac.th','Alumni CS-UBU');

@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">ความคิดเห็น</span><h2>
+                                            <h2><span class="nav-tabs-title">Comments</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -121,8 +121,6 @@
 
                                   								<i class="fa fa-user" aria-hidden="true"> {{$topic->name}}</i>
                                   								| <i class="fa fa-calendar"> </i> {{$topic->created_at}}
-
-                                  								| <i class="fa fa-comments"></i> <a href="">  </a>
                                   							</p>
                                 						</div>
                                 					</div>
@@ -130,7 +128,7 @@
                                         <!-- Comment -->
                                           <div class="row">
                                 						<div class="col-md-12 col-sm-12">
-                                              <h2 >ความคิดเห็น</h2>
+                                              <h2 >Comments</h2>
                                                 <section class="comment-list">
                                                   @foreach ($comment as $val)
                                                   <article class="row">
@@ -148,7 +146,8 @@
                                                           </header><br>
                                                           <div class="comment-post">
                                                             <p>
-                                                              {{$val->detail}}
+                                                              {!! nl2br(e($val->detail))!!}
+
                                                             </p>
                                                           </div>
                                                           <div class="comment-date"><i class="fa fa-calendar"></i> {{$val->created_at}}</div>
@@ -169,31 +168,31 @@
 
 
                                         <div class="col-md-5 col-sm-5">
-                                          <h3>แสดงความคิดเห็น</h3><hr>
+                                          <h3>Comments</h3><hr>
                                             <form action="admincomments&{{$topic->id}}" method="get" class="form-horizontal form-material" enctype="multipart/form-data">
 
                                           <div class="row">
                                 						<div class="col-md-12 col-sm-12">
                                               <div class="form-group label-floating">
-                                                <label>ชื่อ</label>
+                                                <label>Name</label>
                                                 <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control input-md" data-rule="minlen:3"required >
                                               </div>
                                 						</div>
                                             <div class="col-md-12 col-sm-12">
                                               <div class="form-group label-floating">
-                                                <label>อีเมล์</label>
+                                                <label>E-mail</label>
                                                 <input type="email" name="email"  value="{{ Auth::user()->email }}"class="form-control input-md" data-rule="minlen:3" required>
 
                                               </div>
                                 						</div>
                                             <div class="col-md-12 col-sm-12">
                                               <divclass="form-group label-floating">
-                                                <label>รายละเอียด</label>
-                                                <textarea type="text"  rows="10" name="detail" class="form-control input-md" required ></textarea>
+                                                <label>Details</label>
+                                                <textarea type="text"  rows="3" name="detail" class="form-control input-md" required ></textarea>
 
                                               </div>
                                 						</div>
-                                              <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                              <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                               <div class="clearfix"></div>
                                 				</div>
                                         </form>

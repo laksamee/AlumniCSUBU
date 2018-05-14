@@ -101,7 +101,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">รายละเอียดข่าวสาร</span><h2>
+                                            <h2><span class="nav-tabs-title">Details</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>

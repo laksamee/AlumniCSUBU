@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">แก้ไขกระทู้ของฉัน</span><h2>
+                                            <h2><span class="nav-tabs-title">Edit Blog</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -113,13 +113,13 @@
                                           <div class="row">
                                               <div class="col-md-5">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">ชื่อ</label>
+                                                      <label class="control-label">Name</label>
                                                       <input type="text" name="name" value="{{$topic->name}}"class="form-control"disabled>
                                                   </div>
                                               </div>
                                               <div class="col-md-6">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">อีเมล์</label>
+                                                      <label class="control-label">E-mail์</label>
                                                       <input type="email" name="email" value="{{$topic->email}}" name="name"class="form-control"disabled>
                                                   </div>
                                               </div>
@@ -129,7 +129,7 @@
                                             <div class="row">
                                                 <div class="col-md-11">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">หัวข้อ</label>
+                                                        <label class="control-label">Topic</label>
                                                         <textarea row ="10" type="text" name="topic"class="form-control" >{{$topic->topic}}</textarea>
                                                     </div>
                                                 </div>
@@ -139,13 +139,13 @@
                                           <div class="row">
                                               <div class="col-md-12">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">รายละเอียด</label>
-                                                      <textarea row ="10" type="text" name="detail" class="form-control" >{{$topic->detail}}</textarea>
+                                                      <label class="control-label">Details</label>
+                                                      <textarea row ="5" type="text" name="detail" class="form-control" >{{$topic->detail}}</textarea>
                                                   </div>
 
                                               </div>
                                           </div>
-                                        <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                         <div class="clearfix"></div>
                                     </form>
 

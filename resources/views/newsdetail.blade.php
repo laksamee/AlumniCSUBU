@@ -27,12 +27,6 @@
   <!-- template skin -->
   <link id="t-colors" href="index_alumni_csubu/color/default.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Medicio
-    Theme URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 
 
 </head>
@@ -57,15 +51,15 @@
           @if (Route::has('login'))
             @auth
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/index">หน้าหลัก</a></li>
+              <li class="active"><a href="/index">Home</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/memberdashboard"><i class="fa fa-user"></i> โปรไฟล์ของฉัน</a></li>
+                <li><a href="/memberdashboard"><i class="fa fa-user"></i> Profile</a></li>
                 <li><a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                    <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+                    <i class="fa fa-sign-out"></i> Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form></li>
@@ -74,7 +68,7 @@
             </ul>
             @else
                 <ul class="nav navbar-nav">
-                  <li><a href="/index">หน้าหลัก</a></li>
+                  <li><a href="/index">Home</a></li>
                 </ul>
           @endauth
         @endif
@@ -88,8 +82,8 @@
       <section id="news" class="home-section bg-gray paddingbot-60">
         <div class="container marginbot-50">
           <ol class="breadcrumb">
-            <li><a href="/index">หน้าแรก</a></li>
-            <li class="active">รายละเอียดข่าวสาร</li>
+            <li><a href="/index">Home</a></li>
+            <li class="active">Detail</li>
           </ol>
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">

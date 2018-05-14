@@ -107,24 +107,26 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title">รายชื่อศิษย์เก่าทั้งหมด</span>
+                                            <span class="nav-tabs-title">Chats</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs"></ul>
                                         </div>
                                     </div>
                                 </div>
                             <div class="tab-pane" id="">
                               <div class="card-content table-responsive">
+                                <input class="form-control" id="myInputchat" type="text" placeholder="Search..">
+                                <br>
                                 <table class="table">
                                     <thead class="text-primary">
                                         <tr>
                                           <th></th>
-                                          <th>ชื่อสกุล</th>
-                                          <th>รุ่นที่</th>
-                                          <th></th>
+                                          <th>Name</th>
+                                          <th>Generation</th>
+
                                         </tr>
                                       </thead>
                                     @forelse ($friends as $friend)
-                                    <tbody>
+                                    <tbody id="Tablechat">
                                       @if(($friend->type == 'member'&& $friend->status == 'confirm' && $friend->name != Auth::user()->name) )
                                       <tr>
                                           <td style="width:50px;"><span class="round">
@@ -135,8 +137,7 @@
                                                 @endif</center></span></td>
                                             <td>  <a href="chat&{{$friend->id}}" class="panel-block" style="justify-content: space-between;">
                                                       {{ $friend->name }}
-                                                      <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineuser="onlineUsers"></onlineuser>
-                                                  </a></td>
+                                                   </a></td>
                                             <td>{{$friend->generation}}</td>
                                         </tr>
                                         @endif
@@ -180,5 +181,7 @@
 <script src="users/assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="users/assets/js/demo.js"></script>
+<!-- Search -->
+<script src="js/Search.js"></script>
 
 </html>

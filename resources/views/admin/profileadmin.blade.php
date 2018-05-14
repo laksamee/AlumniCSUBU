@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">แก้ไขข้อมูลส่วนตัว</span><h2>
+                                            <h2><span class="nav-tabs-title">Edit Profile</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -123,26 +123,26 @@
                                             <div class="row">
                                                 <div class="col-md-2">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ผู้ดูแลระบบ</label>
+                                                        <label class="control-label">Admin</label>
                                                         <input type="text" class="form-control" disabled>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ชื่อ - สกุล</label>
+                                                        <label class="control-label">Name</label>
                                                         <input type="text" value="{{ Auth::user()->name }}" name="name"class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">อีเมล์</label>
+                                                        <label class="control-label">E-mail</label>
                                                         <input type="email" value="{{ Auth::user()->email }}" name="email" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">รหัสผ่าน</label>
+                                                        <label class="control-label">Password</label>
                                                         <input type="password" value="" name="password" class="form-control">
                                                     </div>
                                                 </div>
@@ -150,7 +150,7 @@
 
 
 
-                                        <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                         <div class="clearfix"></div>
                                     </form>
                                   </div>

@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">ตรวจสอบคำขอลงทะเบียนศิษย์เก่า</span><h2>
+                                            <h2><span class="nav-tabs-title">Registration Request</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -113,19 +113,19 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ศิษย์เก่า</label>
+                                                        <label class="control-label">Member</label>
                                                         <input type="text" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">รหัสนักศึกษา</label>
+                                                        <label class="control-label">Student ID</label>
                                                         <input type="number" value="{{$chack->id_std}}" class="form-control"disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ชื่อ - สกุล</label>
+                                                        <label class="control-label">Name</label>
                                                         <input type="text" value="{{$chack->name}}" name="name"class="form-control"disabled>
                                                     </div>
                                                 </div>
@@ -133,13 +133,13 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ปีที่จบการศึกษา</label>
+                                                        <label class="control-label">Years</label>
                                                         <input type="number" value="{{$chack->years}}" name="years"class="form-control" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">อีเมล์</label>
+                                                        <label class="control-label">E-mail</label>
                                                         <input type="email" value="{{$chack->email}}" name="email" class="form-control"disabled>
                                                     </div>
                                                 </div>
@@ -147,7 +147,7 @@
                                           </div>
                                       </div>
 
-                                        <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                         <div class="clearfix"></div>
                                     </form>
                                   </div>

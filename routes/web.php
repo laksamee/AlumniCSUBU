@@ -35,7 +35,7 @@ Route::get('/index', 'indexController@index');
 Route::get('/pagereset', 'passwordresetController@index');
 Route::get('/passwordreset', 'passwordresetController@reset');
 
-Route::get('/member&{id}', 'indexController@memberdetial');
+Route::get('/member&{id}', 'indexController@memberdetail');
 
 Route::get('/newsdetail&{id}', 'indexController@detail');
 

@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">แก้ไขข่าวสาร</span><h2>
+                                            <h2><span class="nav-tabs-title">Edit News</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -112,13 +112,13 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">ชื่อ - สกุล</label>
+                                                        <label class="control-label">Name</label>
                                                         <input type="text" name="name_user" value="{{ Auth::user()->name }}" class="form-control" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">หัวข้อ</label>
+                                                        <label class="control-label">Topic</label>
                                                         <input type="text" name="topic"  value="{{$newsedit->topic}}"class="form-control">
                                                     </div>
                                                 </div>
@@ -126,7 +126,7 @@
                                             <div class="row">
                                               <div class="col-md-11">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">รายละเอียด</label>
+                                                      <label class="control-label">Details</label>
                                                       <textarea  rows="20" name = "detail"  class="form-control">{{$newsedit->detail}}</textarea>
                                                   </div>
                                               </div>
@@ -135,7 +135,7 @@
 
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                  <label>เอกสารแนบเพิ่มเติ่ม</label>
+                                                  <label>File</label>
                                                    @if( $newsedit->file != null)
                                                    <a href="/news/file/{{$newsedit->file}}"><i class=""></i>{{$newsedit->file}}</a>
                                                    @endif
@@ -154,14 +154,14 @@
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-12 col-xlg-12 col-md-12">
-                                          <label>วิดีโอเพิ่มเติ่มเกี่ยวกับข่าวสาร</label>
+                                          <label>Video</label>
                                             <center class="m-t-30">
                                               <video id ="newsvideo" class="img-thumbnail image" src="news\video\{{$newsedit->video}}" width="80%" height="99%" controls></video>
                                             </center>
                                           <input type="file" name="video"  onchange="shownewsvideo.call(this)">
                                         </div>
                                       </div>
-                                        <button type="submit" class="btn btn-primary pull-right">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                         <div class="clearfix"></div>
                                     </form>
                                   </div>

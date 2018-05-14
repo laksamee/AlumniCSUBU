@@ -27,14 +27,6 @@
   <!-- template skin -->
   <link id="t-colors" href="index_alumni_csubu/color/default.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Medicio
-    Theme URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -61,11 +53,11 @@
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/memberdashboard"><i class="fa fa-user"></i> โปรไฟล์ของฉัน</a></li>
+                <li><a href="/memberdashboard"><i class="fa fa-user"></i> Profile</a></li>
                 <li><a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                    <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+                    <i class="fa fa-sign-out"></i> Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form></li>
@@ -74,7 +66,7 @@
             </ul>
             @else
                 <ul class="nav navbar-nav">
-                  <li ><a href="/index">หน้าหลัก</a></li>
+                  <li ><a href="/index">Home</a></li>
                 </ul>
           @endauth
         @endif
@@ -88,8 +80,8 @@
       <section id="news" class="home-section bg-gray paddingbot-60">
         <div class="container marginbot-50">
           <ol class="breadcrumb">
-            <li><a href="/index">หน้าหลัก</a></li>
-            <li class="active">กระทู้ทั้งหมด</li>
+            <li><a href="/index">Home</a></li>
+            <li class="active">All Blog</li>
           </ol>
 
           <div class="row">
@@ -106,12 +98,10 @@
     							<p>{{iconv_substr($val->detail,0,440,"UTF-8")." ..." }}
 
     							</p>
-    								<p><a href="">อ่านเพิ่มเติม...</a></p>
+    								<p><a href="">Read more ...</a></p>
                     <p>
       								<i class="fa fa-user" aria-hidden="true"> {{ $val->name}}</i>
       								| <i class="fa fa-calendar"> {{ $val->created_at}}</i>
-
-      								| <i class="fa fa-comments"></i> <a href="">  ความคิดเห็น</a>
       							</p>
     						</div>
                 <div class="col-md-1 col-sm-1 right">
@@ -131,28 +121,28 @@
               {{$blog->links()}}
     				</div>
             <div class="col-md-4 col-sm-4">
-              <h3>ตั้งกระทู้</h3><hr>
+              <h3>Posts</h3><hr>
               @if (Route::has('login'))
                 @auth
     					<div class="row">
                 <form action="{{ url('/postblog') }}" method="get" >
     						<div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>ชื่อ</label>
+                    <label>Name</label>
                     <input type="text" name="name"  value="{{Auth::user()->name}}" class="form-control input-md" data-rule="minlen:3"required >
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>อีเมล์</label>
+                    <label>E-mail</label>
                     <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control input-md" data-rule="minlen:3" required>
                     <div class="validation"></div>
                   </div>
     						</div>
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                    <label>หัวข้อกระทู้</label>
+                    <label>Topic</label>
                     <input type="text" name="topic"  class="form-control input-md" data-rule="minlen:3" required>
                     <div class="validation"></div>
                   </div>
@@ -165,7 +155,7 @@
                   </div>
     						</div>
                 <div class="col-md-4 col-sm-4">
-                  <input type="submit" value="ยืนยัน" class="btn btn-skin btn-block btn-lg">
+                  <input type="submit" value="submit" class="btn btn-skin btn-block btn-lg">
                 </div>
               </form>
     					</div>
@@ -174,34 +164,34 @@
                         <form action="{{ url('/postblog') }}" method="get" >
             						<div class="col-md-12 col-sm-12">
                           <div class="form-group">
-                            <label>ชื่อ</label>
+                            <label>Name</label>
                             <input type="text" name="name"  class="form-control input-md" data-rule="minlen:3"required >
                             <div class="validation"></div>
                           </div>
             						</div>
                         <div class="col-md-12 col-sm-12">
                           <div class="form-group">
-                            <label>อีเมล์</label>
+                            <label>E-mail</label>
                             <input type="email" name="email"  class="form-control input-md" data-rule="minlen:3" required>
                             <div class="validation"></div>
                           </div>
             						</div>
                         <div class="col-md-12 col-sm-12">
                           <div class="form-group">
-                            <label>หัวข้อกระทู้</label>
+                            <label>Topic</label>
                             <input type="text" name="topic"  class="form-control input-md" data-rule="minlen:3" required>
                             <div class="validation"></div>
                           </div>
             						</div>
                         <div class="col-md-12 col-sm-12">
                           <div class="form-group">
-                            <label>รายละเอียด</label>
+                            <label>Detail</label>
                             <textarea type="text"  name="detail" class="form-control input-md" required ></textarea>
                             <div class="validation"></div>
                           </div>
             						</div>
                         <div class="col-md-4 col-sm-4">
-                          <input type="submit" value="ยืนยัน" class="btn btn-skin btn-block btn-lg">
+                          <input type="submit" value="submit" class="btn btn-skin btn-block btn-lg">
                         </div>
                       </form>
             					</div>

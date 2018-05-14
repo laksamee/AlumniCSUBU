@@ -59,11 +59,22 @@ $(document).ready(function(){
  });
 });
 
-// ้ดูแลระบบและศิษย์เก่าที่ลงทะเบียนเข้าสู่ระบบค้นหากระทู้เฉพาะของตนเอง
+// ดูแลระบบและศิษย์เก่าที่ลงทะเบียนเข้าสู่ระบบค้นหากระทู้เฉพาะของตนเอง
 $(document).ready(function(){
  $("#myInputmeblog").on("keyup", function() {
    var value = $(this).val().toLowerCase();
    $("#myTablemeblog tr").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+ });
+});
+
+
+// ค้นหาเพื่อนที่การแชท
+$(document).ready(function(){
+ $("#myInputchat").on("keyup", function() {
+   var value = $(this).val().toLowerCase();
+   $("#Tablechat tr").filter(function() {
      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
    });
  });
