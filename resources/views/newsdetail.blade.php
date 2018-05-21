@@ -48,30 +48,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          @if (Route::has('login'))
-            @auth
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="/index">Home</a></li>
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="/memberdashboard"><i class="fa fa-user"></i> Profile</a></li>
-                <li><a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                    <i class="fa fa-sign-out"></i> Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form></li>
-              </ul>
-            </li>
-            </ul>
-            @else
+
                 <ul class="nav navbar-nav">
-                  <li><a href="/index">Home</a></li>
+                  <li><a href="/index">หน้าแรก</a></li>
                 </ul>
-          @endauth
-        @endif
         </div>
         <!-- /.navbar-collapse -->
       </div>
@@ -82,8 +62,8 @@
       <section id="news" class="home-section bg-gray paddingbot-60">
         <div class="container marginbot-50">
           <ol class="breadcrumb">
-            <li><a href="/index">Home</a></li>
-            <li class="active">Detail</li>
+            <li><a href="/index">หน้าแรก</a></li>
+            <li class="active">รายละเอียดข่าวสาร</li>
           </ol>
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">

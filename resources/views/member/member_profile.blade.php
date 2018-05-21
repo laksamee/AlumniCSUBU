@@ -41,25 +41,25 @@
                   <li >
                       <a href="index">
                           <i class="material-icons">home </i>
-                          <p>home</p>
+                          <p>หน้าแรก</p>
                       </a>
                   </li>
                     <li >
                         <a href="memberdashboard">
                             <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
+                            <p>การจัดการ</p>
                         </a>
                     </li>
                     <li class="active">
                         <a href="member_profile">
                             <i class="fa fa-user"></i>
-                            <p>User Profile</p>
+                            <p>โปรไฟล์ของฉัน</p>
                         </a>
                     </li>
                     <li>
                         <a href="chat">
                             <i class="fa fa-comments"></i>
-                            <p>chat</p>
+                            <p>แชท</p>
                         </a>
                     </li>
 
@@ -67,7 +67,7 @@
                       <a href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
-                          <i class="fa fa-sign-out"></i> logout</a>
+                          <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                           </form>
@@ -85,13 +85,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="member_profile"> User Profile </a>
+                        <a class="navbar-brand" href="member_profile"> โปรไฟล์ของฉัน </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                           <li>
                               <a href="member_profile"lass="dropdown-toggle"  ><i class="material-icons">person</i>
-                                <p class="hidden-lg hidden-md">Profile</p>{{Auth::user()->name}}
+                                {{Auth::user()->name}}
                               </a>
                           </li>
                         </ul>
@@ -107,7 +107,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">Edit Profile</span><h2>
+                                            <h2><span class="nav-tabs-title">โปรไฟล์ของฉัน</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -134,19 +134,19 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Member</label>
+                                                        <label class="control-label">ศิษย์เก่า</label>
                                                         <input type="text" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Student ID</label>
+                                                        <label class="control-label">รหัสนักศึกษา</label>
                                                         <input type="number" name="idstd" value="{{Auth::user()->id_std}}" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Name</label>
+                                                        <label class="control-label">ชื่อ - สกุล</label>
                                                         <input type="text" value="{{Auth::user()->name}}" name="name"class="form-control">
                                                     </div>
                                                 </div>
@@ -154,20 +154,20 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Years</label>
+                                                        <label class="control-label">ปีที่จบการศึกษา</label>
                                                         <input type="number" value="{{Auth::user()->years}}" name="years"class="form-control" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Generation</label>
+                                                        <label class="control-label">รุ่นที่เข้าศึกษา</label>
                                                         <input type="text" value="{{Auth::user()->generation}}" name ="generation" class="form-control">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">E-mail</label>
+                                                        <label class="control-label">อีเมล</label>
                                                         <input type="email" value="{{Auth::user()->email}}" name="email" class="form-control">
                                                     </div>
                                                 </div>
@@ -175,13 +175,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Address</label>
+                                                        <label class="control-label">ที่อยู่</label>
                                                         <input type="text" value="{{Auth::user()->address}}" name="address"class="form-control" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Office</label>
+                                                        <label class="control-label">สถานที่ทำงาน</label>
                                                         <input type="text" value="{{Auth::user()->office}}" name="office" class="form-control">
                                                     </div>
                                                 </div>
@@ -189,7 +189,7 @@
 
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                  <label>Senior project file</label>
+                                                  <label>ไฟล์รายงานโครงงาน</label>
                                                   @if( Auth::user()->senior_project != null)
                                                   <a href="/user/file/{{Auth::user()->senior_project}}"><i class=""></i>{{Auth::user()->senior_project}}</a>
                                                   @endif
@@ -200,7 +200,7 @@
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-12 col-xlg-12 col-md-12">
-                                          <label>Video</label>
+                                          <label>วิดีโอตัวอย่างโปรแกรม</label>
                                             <center class="m-t-30">
                                               <video id ="membervideo" class="img-thumbnail image" src="user\video_project\{{Auth::user()->video_project}}" width="80%" height="99%" controls></video>
                                             </center>
@@ -209,7 +209,7 @@
                                       </div>
 
 
-                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                        <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                         <div class="clearfix"></div>
                                     </form>
 
@@ -223,7 +223,7 @@
                                   <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
                                   <div class="col-md-3" >
                                       <div class="form-group label-floating">
-                                          <label class="control-label">Take</label>
+                                          <label class="control-label">รุ่นพี่สายเทค</label>
                                           <select name="take" class="form-control">
                                               @foreach ($members as $member)
                                                 @if( $member->generation < Auth::user()->generation )
@@ -241,14 +241,14 @@
                                       <div class="form-group label-floating">
                                               @foreach ($members as $member)
                                                 @if(Auth::user()->take == $member->id )
-                                                <label class="control-label">Take</label>
+                                                <label class="control-label">รุ่นพี่สายเทค</label>
                                                   <h4>{{$member->name}}</h4>
                                               @endif
                                               @endforeach
 
                                       </div>
                                   </div>
-                                  <button type="submit" class="btn btn-primary pull-right">submit</button>
+                                  <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                   <div class="clearfix"></div>
                                 </form>
 

@@ -4,7 +4,7 @@
             <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
         </div>
         <div class="control auto-width">
-            <input type="button" class="button" value="Send" v-on:click="sendChat">
+            <input type="button" class="button" value="ส่ง" v-on:click="sendChat">
         </div>
     </div>
 </template>

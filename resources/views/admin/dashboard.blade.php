@@ -31,26 +31,26 @@
                   <li >
                       <a href="index">
                           <i class="material-icons">home</i>
-                          <p>home</p>
+                          <p>หน้าแรก</p>
                       </a>
                   </li>
                     <li class="active">
                         <a href="/dashboard">
                             <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
+                            <p>การจัดการ</p>
                         </a>
                     </li>
                     <li>
                         <a href="profileadmin">
                             <i class="fa fa-user"></i>
-                            <p>User Profile</p>
+                            <p>โปรไฟล์ของฉัน</p>
                         </a>
                     </li>
                     <li>
                       <a href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
-                          <i class="fa fa-sign-out"></i> logout</a>
+                          <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                           </form>
@@ -68,13 +68,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"> Dashboard </a>
+                        <a class="navbar-brand" href="#"> การจัดการ </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="profileadmin"lass="dropdown-toggle"  ><i class="material-icons">person</i>
-                                  <p class="hidden-lg hidden-md">Profile</p>{{Auth::user()->name}}
+                                  {{Auth::user()->name}}
                                 </a>
                             </li>
                         </ul>
@@ -90,22 +90,23 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
+                                          <span class="nav-tabs-title">สมาชิก :</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
                                                     <a href="#admin" data-toggle="tab">
-                                                        <i class="material-icons">person</i> Admin
+                                                        <i class="material-icons">person</i> ผู้ดูแลระบบ
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#member" data-toggle="tab">
-                                                        <i class="material-icons">group</i> Member
+                                                        <i class="material-icons">group</i> ศิษย์เก่า
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#settings" data-toggle="tab">
-                                                        <i class="material-icons">report_problem</i> Registration Request
+                                                        <i class="material-icons">report_problem</i> คำร้องขอลงทะเบียน
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
@@ -117,16 +118,16 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="admin">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputadmin" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputadmin" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
                                                   <th></th>
-                                                  <th>Name</th>
-                                                  <th>E-mail</th>
+                                                  <th>ชื่อ</th>
+                                                  <th>อีเมล</th>
                                                   <th></th>
-                                                  <th><a href="#adminadd" data-toggle="tab" title="add">
+                                                  <th><a href="#adminadd" data-toggle="tab" title="เพิ่มผู้ดูแลระบบ">
                                                       <i class="material-icons">person_add</i>
                                                       <div class="ripple-container"></div>
                                                   </a></th>
@@ -146,7 +147,7 @@
 
                                                       <td class="td-actions text-right">
                                                         @if( Auth::user()->name != $user->name)
-                                                        <button type="button" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                                        <button type="button" rel="tooltip" title="แก้ไข" class="btn btn-primary btn-simple btn-xs">
                                                               <a href="adminedit&{{$user->id}}"><i class="material-icons">edit</i></a>
                                                         </button>
 
@@ -160,7 +161,7 @@
                                                             </button>
                                                             @endif
 
-                                                            <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                            <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                                   <a href="admindelete&{{$user->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                             </button>
                                                               @endif
@@ -176,18 +177,18 @@
                                         </div>
                                         <div class="tab-pane" id="member">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputmember" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputmember" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
                                                   <th></th>
-                                                  <th>Name</th>
-                                                  <th>Student ID</th>
-                                                  <th>Years</th>
-                                                  <th>Generation</th>
+                                                  <th>ชื่อ - สกุล</th>
+                                                  <th>รหัสนักศึกษา</th>
+                                                  <th>ปีที่จบการศึกษา</th>
+                                                  <th>รุ่นที่เข้าศึกษา</th>
                                                   <th></th>
-                                                  <th><a href="#useradd" data-toggle="tab" title="add">
+                                                  <th><a href="#useradd" data-toggle="tab" title="เพิ่มศิษย์เก่า">
                                                       <i class="material-icons">person_add</i>
                                                       <div class="ripple-container"></div>
                                                   </a></th>
@@ -207,7 +208,7 @@
                                                       <td>{{$user->years}}</td>
                                                       <td class="text-primary">{{$user->generation}}</td>
                                                       <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                                        <button type="button" rel="tooltip" title="แก้ไข" class="btn btn-primary btn-simple btn-xs">
                                                               <a href="memberedit&{{$user->id}}"><i class="material-icons">edit</i></a>
                                                         </button>
                                                         @if( $user->block == '1')
@@ -220,7 +221,7 @@
                                                           </button>
                                                           @endif
 
-                                                          <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                          <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                                 <a href="memberdelete&{{$user->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                           </button>
                                                       </td>
@@ -234,14 +235,14 @@
                                         </div>
                                         <div class="tab-pane" id="settings">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputunconfirm" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputunconfirm" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
-                                                  <th>Name</th>
-                                                  <th>Student ID</th>
-                                                  <th>Years</th>
+                                                  <th>ชื่อ - สกุล</th>
+                                                  <th>รหัสนักศึกษา</th>
+                                                  <th>ปีที่จบการศึกษา</th>
 
                                                   <th></th>
                                               </tr></thead>
@@ -254,7 +255,7 @@
                                                         <td>{{$user->id_std}}</td>
                                                         <td>{{$user->years}}</td>
                                                         <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Check" class="btn btn-danger btn-simple btn-xs">
+                                                            <button type="button" rel="tooltip" title="ตรวจสอบ" class="btn btn-danger btn-simple btn-xs">
                                                               <a href="userchack&{{$user->id}}"><i class="fa fa-exclamation-triangle" style="font-size:27px ;color:red"></i></a>
                                                             </button>
                                                         </td>
@@ -282,19 +283,19 @@
                                                     <div class="row">
                                                         <div class="col-md-2">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Admin</label>
+                                                                <label class="control-label">ผู้ดูแลระบบ</label>
                                                                 <input type="text" class="form-control" disabled>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Name</label>
+                                                                <label class="control-label">ชื่อ</label>
                                                                 <input type="text" name="name" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">E-mail</label>
+                                                                <label class="control-label">อีเมล</label>
                                                                 <input type="email" name = "email" class="form-control">
                                                             </div>
                                                         </div>
@@ -303,7 +304,7 @@
                                                   </div>
                                               </div>
 
-                                                <button type="submit" class="btn btn-primary pull-right">submit</button>
+                                                <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                                 <div class="clearfix"></div>
                                             </form>
                                           </div>
@@ -326,19 +327,19 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Member</label>
+                                                                <label class="control-label">ศิษย์เก่า</label>
                                                                 <input type="text" class="form-control" disabled>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Student ID</label>
+                                                                <label class="control-label">รหัสนักศึกษา</label>
                                                                 <input type="number" name="userid" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Name</label>
+                                                                <label class="control-label">ชื่อ - สกุล</label>
                                                                 <input type="text" name="name" class="form-control">
                                                             </div>
                                                         </div>
@@ -346,19 +347,19 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Years</label>
+                                                                <label class="control-label">ปีที่จบการศึกษา</label>
                                                                 <input type="number" name="years" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Generation</label>
+                                                                <label class="control-label">รุ่นที่เข้าศึกษา</label>
                                                                 <input type="text" name="generation" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">E-mail</label>
+                                                                <label class="control-label">อีเมล</label>
                                                                 <input type="email" name="email"class="form-control">
                                                             </div>
                                                         </div>
@@ -366,7 +367,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Address</label>
+                                                                <label class="control-label">ที่อยู่</label>
 
                                                                 <input type="text" name="address"  class="form-control">
                                                             </div>
@@ -375,7 +376,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                          <label>Senior project file</label>
+                                                          <label>ไฟล์รายงานโครงงาน</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
                                                         </div>
                                                     </div>
@@ -383,16 +384,17 @@
                                               </div>
                                               <div class="row">
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
-                                                  <label>Video</label>
+                                                  <label>วิดีโอตัวอย่างการใช้งานโปรแกรม</label>
                                                 </div>
                                               </div>
                                               <div class="row">
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
                                                   <center><video id ="projectvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video></center>
                                                   <input type="file" name="video" onchange="showprojectvideo.call(this)">
+                                                  <label>(.MP4)</label>
                                                 </div>
                                               </div>
-                                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                                <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                                 <div class="clearfix"></div>
                                             </form>
                                           </div>
@@ -409,23 +411,23 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title">News :</span>
+                                            <span class="nav-tabs-title">ข่าวสาร :</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
                                                     <a href="#allnews" data-toggle="tab">
-                                                        <i class="material-icons">view_list</i> All
+                                                        <i class="material-icons">view_list</i> ข่าวสารทั้งหมด
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#menews" data-toggle="tab">
-                                                        <i class="material-icons">code</i> Me
+                                                        <i class="material-icons">code</i> ข่าวสารของฉัน
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#addnews" data-toggle="tab" >
-                                                        <i class="material-icons">add_circle</i> Add
+                                                        <i class="material-icons">add_circle</i> เพิ่มข่าวสาร
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
@@ -437,14 +439,14 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="allnews">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputallnews" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputallnews" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
                                                   <th></th>
-                                                  <th>Topic</th>
-                                                  <th>Name</th>
+                                                  <th>หัวข้อข่าวสาร</th>
+                                                  <th>ชื่อผู้ประกาศข่าวสาร</th>
                                                   <th></th>
                                               </tr></thead>
                                               @foreach ($news as $allnews )
@@ -468,11 +470,11 @@
                                                                 <a href="newsblock&{{$allnews->id}}"><i class="fa fa-eye" style="color:green"></i></a>
                                                             </button>
                                                             @else
-                                                            <button type="button" rel="tooltip" title="Show" class="btn btn-primary btn-simple btn-xs">
+                                                            <button type="button" rel="tooltip" title="แสดงข่าวสาร" class="btn btn-primary btn-simple btn-xs">
                                                                 <a href="newsunblock&{{$allnews->id}}"><i class="fa fa-eye-slash" style="color:red"></i></a>
                                                             </button>
                                                             @endif
-                                                          <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                          <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                               <a href="newsdelete&{{$allnews->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                           </button>
                                                       </td>
@@ -487,14 +489,14 @@
                                         </div>
                                         <div class="tab-pane" id="menews">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputmenews" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputmenews" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
                                                   <th></th>
-                                                  <th>Topic</th>
-                                                  <th>Name</th>
+                                                  <th>หัวข้อข่าวสาร</th>
+                                                  <th>ชื่อผู้ประกาศข่าวสาร</th>
                                                   <th></th>
                                               </tr></thead>
                                               @foreach ($news as $menews )
@@ -512,7 +514,7 @@
                                                       <td>{{$menews->name_user}}</td>
 
                                                       <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                                        <button type="button" rel="tooltip" title="แก้ไข" class="btn btn-primary btn-simple btn-xs">
                                                               <a href="menewsedit&{{$menews->id}}"><i class="material-icons">edit</i></a>
                                                         </button>
 
@@ -521,11 +523,11 @@
                                                               <a href="newsblock&{{$menews->id}}"><i class="fa fa-eye" style="color:green"></i></a>
                                                           </button>
                                                           @else
-                                                          <button type="button" rel="tooltip" title="Show" class="btn btn-primary btn-simple btn-xs">
+                                                          <button type="button" rel="tooltip" title="แสดงข่าวสาร" class="btn btn-primary btn-simple btn-xs">
                                                               <a href="newsunblock&{{$menews->id}}"><i class="fa fa-eye-slash" style="color:red"></i></a>
                                                           </button>
                                                           @endif
-                                                        <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                        <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                             <a href="newsdelete&{{$menews->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                         </button>
                                                       </td>
@@ -543,7 +545,7 @@
                                         <!-- ====================================เพิ่มข่าวสาร===================================================== -->
                                         <div class="tab-pane" id="addnews">
                                           <div class="card-content table-responsive">
-                                            <a href="#menews" data-toggle="tab" title="Back">  <i class="material-icons" style="font-size:30px ;color:black">reply</i></a>
+                                            <a href="#menews" data-toggle="tab" title="ย้อนกลับ">  <i class="material-icons" style="font-size:30px ;color:black">reply</i></a>
                                             <form action="addnews" method="POST" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                               <div class="row">
@@ -551,13 +553,13 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Name</label>
+                                                                <label class="control-label">ชื่อ</label>
                                                                 <input type="text" name="name_user" value="{{ Auth::user()->name }}" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Topic</label>
+                                                                <label class="control-label">หัวข้อข่าวสาร</label>
                                                                 <input type="text" name="topic" class="form-control">
                                                             </div>
                                                         </div>
@@ -565,7 +567,7 @@
                                                     <div class="row">
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
-                                                              <label class="control-label">Detail</label>
+                                                              <label class="control-label">รายละเอียด</label>
                                                               <textarea  rows="20" name = "detail"  class="form-control"></textarea>
                                                           </div>
                                                       </div>
@@ -574,7 +576,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                          <label>File</label>
+                                                          <label>เอกสารเพิ่มเติม</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
                                                         </div>
                                                     </div>
@@ -586,16 +588,17 @@
                                               </div>
                                               <div class="row">
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
-                                                  <label>Video</label>
+                                                  <label>วิดีโอเพิ่มเติม</label>
                                                 </div>
                                               </div>
                                               <div class="row">
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
                                                   <center><video id ="newsvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video></center>
                                                   <input type="file" name="video" onchange="shownewsvideo.call(this)">
+                                                  <label>(.MP4)</label>
                                                 </div>
                                               </div>
-                                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                                <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                                 <div class="clearfix"></div>
                                             </form>
                                           </div>
@@ -613,23 +616,23 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title">Blog :</span>
+                                            <span class="nav-tabs-title">กระทู้สนทนา :</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
                                                     <a href="#allblog" data-toggle="tab">
-                                                        <i class="material-icons">view_list</i> All
+                                                        <i class="material-icons">view_list</i>กระทู้สนทนาทั้งหมด
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#meblog" data-toggle="tab">
-                                                        <i class="material-icons">code</i> Me
+                                                        <i class="material-icons">code</i> กระทู้สนทนาของฉัน
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
                                                 <a href="#addblog" data-toggle="tab">
-                                                    <i class="material-icons">message</i> add
+                                                    <i class="material-icons">message</i> ตั้งกระทู้สนทนา
                                                     <div class="ripple-container"></div>
                                                 </a>
                                                 </li>
@@ -642,13 +645,13 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="allblog">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputallblog" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputallblog" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
-                                                    <th>Topic</th>
-                                                    <th>Name</th>
+                                                    <th>หัวข้อกระทู้สนทนา</th>
+                                                    <th>ชื่อผู้ตั้งกระทู้สนทนา</th>
                                                     <th>Time</th>
                                                     <th></th>
                                                   </tr>
@@ -661,7 +664,7 @@
                                                       <td>{{$allblog->created_at}} </td>
 
                                                       <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                        <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                             <a href="blog_del&{{$allblog->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                         </button>
                                                       </td>
@@ -674,14 +677,14 @@
                                         </div>
                                         <div class="tab-pane" id="meblog">
                                           <div class="card-content table-responsive">
-                                            <input class="form-control" id="myInputmeblog" type="text" placeholder="Search..">
+                                            <input class="form-control" id="myInputmeblog" type="text" placeholder="ค้นหา..">
                                             <br>
                                             <table class="table">
                                               <thead class="text-primary">
                                                   <tr>
-                                                    <th>Topic</th>
-                                                    <th>Name</th>
-                                                    <th>Time</th>
+                                                    <th>หัวข้อกระทู้สนทนา</th>
+                                                    <th>ชื่อผู้ตั้งกระทู้สนทนา</th>
+                                                    <th>เวลา</th>
                                                     <th></th>
                                                   </tr>
                                               </thead>
@@ -695,10 +698,10 @@
 
                                                       <td class="td-actions text-right">
 
-                                                          <button type="button" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                                          <button type="button" rel="tooltip" title="แก้ไข" class="btn btn-primary btn-simple btn-xs">
                                                               <a href="admin_blogedit&{{$meblog->id}}"><i class="material-icons">edit</i>
                                                           </button>
-                                                          <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-xs">
+                                                          <button type="button" rel="tooltip" title="ลบ" class="btn btn-danger btn-simple btn-xs">
                                                               <a href="blog_del&{{$meblog->id}}"><i class="material-icons" style="color:red">close</i></a>
                                                           </button>
                                                       </td>
@@ -721,7 +724,7 @@
                                                     <div class="row">
                                                         <div class="col-md-11">
                                                             <div class="form-group label-floating">
-                                                                <label class="control-label">Name</label>
+                                                                <label class="control-label">ชื่อ</label>
                                                                 <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" >
                                                             </div>
                                                         </div>
@@ -729,7 +732,7 @@
                                                     <div class="row">
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
-                                                              <label class="control-label">E-mail</label>
+                                                              <label class="control-label">อีเมล</label>
                                                               <input type="email" name="email" value="{{ Auth::user()->email }}" class="form-control">
                                                           </div>
                                                       </div>
@@ -737,7 +740,7 @@
                                                     <div class="row">
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
-                                                              <label class="control-label">Topic</label>
+                                                              <label class="control-label">หัวข้อกระทู้สนทนา</label>
                                                               <input type="text" name="topic"  class="form-control">
                                                           </div>
                                                       </div>
@@ -745,7 +748,7 @@
                                                     <div class="row">
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
-                                                              <label class="control-label">Detail</label>
+                                                              <label class="control-label">รายละเอียด</label>
                                                               <textarea  rows="10" name = "detail" name="name" class="form-control"></textarea>
                                                           </div>
                                                       </div>
@@ -753,7 +756,7 @@
 
                                                   </div>
                                               </div>
-                                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                                <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                                 <div class="clearfix"></div>
                                             </form>
                                           </div>

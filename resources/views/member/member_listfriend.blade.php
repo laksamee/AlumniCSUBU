@@ -40,33 +40,33 @@
                   <li >
                       <a href="index">
                           <i class="material-icons">home</i>
-                          <p>home</p>
+                          <p>หน้าแรก</p>
                       </a>
                   </li>
                   <li >
                       <a href="memberdashboard">
                           <i class="material-icons">dashboard</i>
-                          <p>Dashboard</p>
+                          <p>การจัดการ</p>
                       </a>
                   </li>
 
                     <li>
                         <a href="member_profile">
                             <i class="material-icons">person</i>
-                            <p>User Profile</p>
+                            <p>โปรไฟล์ของฉัน</p>
                         </a>
                     </li>
                     <li class="active">
                         <a href="chat">
                             <i class="fa fa-comments"></i>
-                            <p>chat</p>
+                            <p>แชท</p>
                         </a>
                     </li>
                     <li>
                       <a href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
-                          <i class="fa fa-sign-out"></i> logout</a>
+                          <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                           </form>
@@ -84,13 +84,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="member_listfriend">Chat </a>
+                        <a class="navbar-brand" href="member_listfriend">แชท</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                           <li>
                               <a href="member_profile"lass="dropdown-toggle"  ><i class="material-icons">person</i>
-                                <p class="hidden-lg hidden-md">Profile</p>{{Auth::user()->name}}
+                                {{Auth::user()->name}}
                               </a>
                           </li>
 
@@ -107,21 +107,21 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title">Chats</span>
+                                            <span class="nav-tabs-title">แชท</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs"></ul>
                                         </div>
                                     </div>
                                 </div>
                             <div class="tab-pane" id="">
                               <div class="card-content table-responsive">
-                                <input class="form-control" id="myInputchat" type="text" placeholder="Search..">
+                                <input class="form-control" id="myInputchat" type="text" placeholder="ค้นหา..">
                                 <br>
                                 <table class="table">
                                     <thead class="text-primary">
                                         <tr>
                                           <th></th>
-                                          <th>Name</th>
-                                          <th>Generation</th>
+                                          <th>ชื่อ - สกุล</th>
+                                          <th>รุ่นที่เข้าศึกษา</th>
 
                                         </tr>
                                       </thead>
@@ -144,7 +144,7 @@
                                       </tbody>
                                             @empty
                                                 <div class="panel-block">
-                                                    You don't have any friends
+                                                    ไม่มีรายชื่อสมาชิก
                                                 </div>
 
                                             @endforelse

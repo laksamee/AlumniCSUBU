@@ -21,11 +21,11 @@
                    <h2>{{$user->name}}</h2>
                   <hr>
                  <div class="cbp-l-member-desc">
-               		<h4><p><span>Generation </span> : {{$user->generation}}</p></h4>
-               		<h4><p><span>Graduation years</span> : {{$user->years}}</p></h4>
-               		<h4><p><span>Address</span> : {{$user->address}}</p></h4>
-               		<h4><p><span>Office</span> : {{$user->office}}</p></h4>
-                  <h4><p><span>Senior project file </span> :
+               		<h4><p><span>รุ่นทีเข้าศึกษา </span> : {{$user->generation}}</p></h4>
+               		<h4><p><span>ปีที่จบการศึกษา</span> : {{$user->years}}</p></h4>
+               		<h4><p><span>ที่อยู่</span> : {{$user->address}}</p></h4>
+               		<h4><p><span>สถานที่ทำงาน</span> : {{$user->office}}</p></h4>
+                  <h4><p><span>ไฟล์รายงงายโครงาน </span> :
                     @if($user->senior_project != null)
                      <a href="user\file\{{$user->senior_project}}"><i class=""></i>{{$user->senior_project}}</a>
                   @endif

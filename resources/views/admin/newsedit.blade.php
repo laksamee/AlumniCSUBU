@@ -36,26 +36,26 @@
                 <li >
                     <a href="index">
                         <i class="material-icons">home</i>
-                        <p>home</p>
+                        <p>หน้าแรก</p>
                     </a>
                 </li>
                   <li class="active">
                       <a href="/dashboard">
                           <i class="material-icons">dashboard</i>
-                          <p>Dashboard</p>
+                          <p>การจัดการ</p>
                       </a>
                   </li>
                   <li>
                       <a href="profileadmin">
                           <i class="fa fa-user"></i>
-                          <p>User Profile</p>
+                          <p>โปรไฟล์ขอฉัน</p>
                       </a>
                   </li>
                   <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        <i class="fa fa-sign-out"></i> logout</a>
+                        <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -73,13 +73,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="dashboard"> Dashboard </a>
+                        <a class="navbar-brand" href="dashboard"> การจัดการ </a>
                     </div>
                     <div class="collapse navbar-collapse">
                       <ul class="nav navbar-nav navbar-right">
                           <li>
                               <a href="profileadmin"lass="dropdown-toggle"  ><i class="material-icons">person</i>
-                                <p class="hidden-lg hidden-md">Profile</p>{{Auth::user()->name}}
+                              {{Auth::user()->name}}
                               </a>
                           </li>
                       </ul>
@@ -95,7 +95,7 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">Edit News</span><h2>
+                                            <h2><span class="nav-tabs-title">แก้ไขรายละเอียดข่าวสาร</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
@@ -112,13 +112,13 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Name</label>
+                                                        <label class="control-label">ชื่อ</label>
                                                         <input type="text" name="name_user" value="{{ Auth::user()->name }}" class="form-control" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Topic</label>
+                                                        <label class="control-label">หัวข้อข่าวสาร</label>
                                                         <input type="text" name="topic"  value="{{$newsedit->topic}}"class="form-control">
                                                     </div>
                                                 </div>
@@ -126,7 +126,7 @@
                                             <div class="row">
                                               <div class="col-md-11">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">Details</label>
+                                                      <label class="control-label">รายละเอียด</label>
                                                       <textarea  rows="20" name = "detail"  class="form-control">{{$newsedit->detail}}</textarea>
                                                   </div>
                                               </div>
@@ -135,7 +135,7 @@
 
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                  <label>File</label>
+                                                  <label>เอกสารเพิ่มเติม</label>
                                                    @if( $newsedit->file != null)
                                                    <a href="/news/file/{{$newsedit->file}}"><i class=""></i>{{$newsedit->file}}</a>
                                                    @endif
@@ -154,14 +154,14 @@
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-12 col-xlg-12 col-md-12">
-                                          <label>Video</label>
+                                          <label>วิดีโอเพิ่มเติม</label>
                                             <center class="m-t-30">
                                               <video id ="newsvideo" class="img-thumbnail image" src="news\video\{{$newsedit->video}}" width="80%" height="99%" controls></video>
                                             </center>
                                           <input type="file" name="video"  onchange="shownewsvideo.call(this)">
                                         </div>
                                       </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                        <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                         <div class="clearfix"></div>
                                     </form>
                                   </div>

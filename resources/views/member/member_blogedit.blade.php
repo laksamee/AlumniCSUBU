@@ -36,32 +36,32 @@
                   <li >
                       <a href="index">
                           <i class="material-icons">home</i>
-                          <p>home</p>
+                          <p>หน้าแรก</p>
                       </a>
                   </li>
                   <li class="active">
                       <a href="memberdashboard">
                           <i class="material-icons">dashboard</i>
-                          <p>Dashboard</p>
+                          <p>การจัดการ</p>
                       </a>
                   </li>
                   <li>
                       <a href="member_profile">
                           <i class="fa fa-user"></i>
-                          <p>User Profile</p>
+                          <p>โปรไฟล์ของฉัน</p>
                       </a>
                   </li>
                   <li>
                       <a href="chat">
                           <i class="fa fa-comments"></i>
-                          <p>chat</p>
+                          <p>แชท</p>
                       </a>
                   </li>
                   <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        <i class="fa fa-sign-out"></i> logout</a>
+                        <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -79,7 +79,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="memberdashboard"> Dashboard </a>
+                        <a class="navbar-brand" href="memberdashboard"> การจัดการ </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -101,14 +101,14 @@
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <h2><span class="nav-tabs-title">Edit</span><h2>
+                                            <h2><span class="nav-tabs-title">แก้ไขรายละเอียดกระทู้สนทนา</span><h2>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
 
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- ====================================แก้ไขข้อมูลส่วนตัว===================================================== -->
+                                <!-- ====================================แก้ไขกระทู้สนทนา===================================================== -->
                                 <div class="tab-pane" id="">
                                   <div class="card-content table-responsive">
                                     <form action="memberblogupdate&{{$topic->id}}" method="post" enctype="multipart/form-data">
@@ -119,13 +119,13 @@
                                           <div class="row">
                                               <div class="col-md-5">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">Name</label>
+                                                      <label class="control-label">ชื่อ</label>
                                                       <input type="text" name="name" value="{{$topic->name}}"class="form-control"disabled>
                                                   </div>
                                               </div>
                                               <div class="col-md-6">
                                                   <div class="form-group label-floating">
-                                                      <label class="control-label">E-mail</label>
+                                                      <label class="control-label">อีเมล</label>
                                                       <input type="email" name="email" value="{{$topic->email}}" name="name"class="form-control"disabled>
                                                   </div>
                                               </div>
@@ -135,7 +135,7 @@
                                             <div class="row">
                                                 <div class="col-md-11">
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Topic</label>
+                                                        <label class="control-label">หัวข้อกระทู้สนทนา</label>
                                                         <textarea row ="10" type="text" name="topic"class="form-control" >{{$topic->topic}}</textarea>
                                                     </div>
                                                 </div>

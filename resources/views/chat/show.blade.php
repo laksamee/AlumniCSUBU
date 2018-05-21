@@ -42,33 +42,33 @@
                           <li >
                               <a href="index">
                                   <i class="material-icons">home</i>
-                                  <p>home</p>
+                                  <p>หน้าแรก</p>
                               </a>
                           </li>
                           <li >
                               <a href="memberdashboard">
                                   <i class="material-icons">dashboard</i>
-                                  <p>Dashboard</p>
+                                  <p>การจัดการ</p>
                               </a>
                           </li>
 
                             <li>
                                 <a href="member_profile">
                                     <i class="material-icons">person</i>
-                                    <p>User Profile</p>
+                                    <p>โปรไฟล์ของฉัน</p>
                                 </a>
                             </li>
                             <li class="active">
                                 <a href="member_listfriend">
                                     <i class="fa fa-comments"></i>
-                                    <p>chat</p>
+                                    <p>แชท</p>
                                 </a>
                             </li>
                             <li>
                               <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                                  <i class="fa fa-sign-out"></i> logout</a>
+                                  <i class="fa fa-sign-out"></i> ออกจากระบบ</a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       {{ csrf_field() }}
                                   </form>
@@ -110,7 +110,7 @@
                                         <div class="card-header" data-background-color="purple">
                                             <div class="nav-tabs-navigation">
                                                 <div class="nav-tabs-wrapper">
-                                                    <span class="nav-tabs-title">Chats</span>
+                                                    <span class="nav-tabs-title">แชท</span>
                                                     <ul class="nav nav-tabs" data-tabs="tabs"></ul>
                                                 </div>
                                             </div>
@@ -128,7 +128,7 @@
                                                       <div class="panel-heading">
                                                           {{ $friend->name }}
                                                           <div class="contain is-pulled-right">
-                                                              <a href="{{ url('/chat') }}" class="is-link"><i class="fa fa-arrow-left"></i> Go Back </a>
+                                                              <a href="{{ url('/chat') }}" class="is-link"><i class="fa fa-arrow-left"></i> ย้อนกลับ </a>
                                                           </div>
                                                           <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:friendid="{{ $friend->id }}"></chat>
                                                       </div>
