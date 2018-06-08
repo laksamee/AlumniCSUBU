@@ -243,15 +243,17 @@
 
 
                                                     <div class="row">
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
                                                           <label>เอกสารเพิ่มเติม</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
+                                                           <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นามสกุลไฟล์ .doc,.pdf)</label>
                                                         </div>
                                                     </div>
                                                   </div>
                                                   <div class="col-md-4">
                                                            <img src="images/noimages.png" id ="newsimg"  />
-                                                            <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>
+                                                            <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>  
+															<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .png,.jpeg)</label>															
                                                   </div>
                                               </div>
                                               <div class="row">
@@ -259,8 +261,10 @@
                                                   <label>วิดีโอเพิ่มเติม</label>
                                                   <center class="m-t-30">
                                                     <video id ="newsaddvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video>
+													
                                                   </center>
                                                   <input type="file" name="video" onchange="showaddvideo.call(this)">
+												  <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                                 </div>
                                               </div>
                                                 <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>

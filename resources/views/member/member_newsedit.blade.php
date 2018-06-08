@@ -146,6 +146,8 @@
                                                   <a href="/news/file/{{$newsedit->file}}"><i class=""></i>{{$newsedit->file}}</a>
                                                   @endif
                                                   <input type="file" name="pdfUpload">
+                                                  <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
+
                                                 </div>
                                             </div>
                                           </div>
@@ -157,6 +159,7 @@
                                                  <img src="images/noimages.png"  id ="newsimg"  width="200" >
                                                  @endif
                                                     <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>
+                                                    <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค  นาสกุลไฟล์ .png,.jpeg)</label>
                                           </div>
                                       </div>
                                       <div class="row">
@@ -166,6 +169,7 @@
                                             <video id ="newsvideo" class="img-thumbnail image" src="news\video\{{$newsedit->video}}" width="80%" height="99%" controls></video>
                                           </center>
                                           <input type="file" name="video" onchange="showeditvideo.call(this)">
+                                          <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค  นาสกุลไฟล์ .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                         </div>
                                       </div>
                                         <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>

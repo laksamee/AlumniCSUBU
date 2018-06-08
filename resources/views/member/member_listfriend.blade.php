@@ -122,7 +122,6 @@
                                           <th></th>
                                           <th>ชื่อ - สกุล</th>
                                           <th>รุ่นที่เข้าศึกษา</th>
-
                                         </tr>
                                       </thead>
                                     @forelse ($friends as $friend)
@@ -146,7 +145,6 @@
                                                 <div class="panel-block">
                                                     ไม่มีรายชื่อสมาชิก
                                                 </div>
-
                                             @endforelse
                                   </table>
                                 </div>

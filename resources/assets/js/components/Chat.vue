@@ -32,7 +32,6 @@
 </style>
 
 <template>
-
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
             <div v-for="chat in chats" style="overflow: auto;">

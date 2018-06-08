@@ -39,7 +39,7 @@ class controllermemberprofile extends Controller
     }
     if(Input::file('video')){ //Upload file pdf
       $file = Input::file('video');
-      $file->move(public_path().'/user/video',$file->getClientOriginalName());
+      $file->move(public_path().'/user/video_project',$file->getClientOriginalName());
       $user->video_project = $file->getClientOriginalName();
     }
 

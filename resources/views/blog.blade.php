@@ -77,7 +77,7 @@
     							<p>{{iconv_substr($val->detail,0,440,"UTF-8")." ..." }}
 
     							</p>
-    								<p><a href="">Read more ...</a></p>
+    								<p><a href="comment&{{$val->id}}">อ่านเพิ่มเติม  ...</a></p>
                     <p>
       								<i class="fa fa-user" aria-hidden="true"> {{ $val->name}}</i>
       								| <i class="fa fa-calendar"> {{ $val->created_at}}</i>

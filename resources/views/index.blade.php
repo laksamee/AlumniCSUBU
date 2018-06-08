@@ -461,7 +461,7 @@
                     <div class="cbp-caption-activeWrap">
                       <div class="cbp-l-caption-alignCenter">
                         <div class="cbp-l-caption-body">
-                          <div class="cbp-l-caption-text">Detail</div>
+                          <div class="cbp-l-caption-text">รายละเอียด</div>
                         </div>
                       </div>
                     </div>

@@ -90,7 +90,6 @@
       								<i class="fa fa-user" aria-hidden="true"> {{$topic->name}}</i>
       								| <i class="fa fa-calendar"> </i> {{$topic->created_at}}
 
-      								| <i class="fa fa-comments"></i> <a href="">  </a>
       							</p>
     						</div>
     					</div>

@@ -128,6 +128,7 @@
                                                 <img src="/user/profile/no_img.jpg" id ="memberimg" class="img-circle" width="200" >
                                                 @endif</center>
                                                 <center class="m-t-30"><input type="file" name="member_img" onchange="showaddimage.call(this)"></center>
+                                                <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .png,.jpeg)</label>
 
                                         </div>
                                           <div class="col-md-9">
@@ -194,6 +195,7 @@
                                                   <a href="/user/file/{{Auth::user()->senior_project}}"><i class=""></i>{{Auth::user()->senior_project}}</a>
                                                   @endif
                                                    <input type="file" name="pdfUpload">
+                                                   <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
                                                 </div>
                                             </div>
                                           </div>
@@ -205,6 +207,7 @@
                                               <video id ="membervideo" class="img-thumbnail image" src="user\video_project\{{Auth::user()->video_project}}" width="80%" height="99%" controls></video>
                                             </center>
                                           <input type="file" name="video" onchange="showaddvideo.call(this)">
+                                          <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟลต้องเป็น .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                         </div>
                                       </div>
 
@@ -217,63 +220,6 @@
                                   </div>
                                 </div>
 
-                                <body onload="init()">
-                                <div id="sample">
-                                  <div id="myDiagramDiv" style=" height: 500px"></div>
-                                  <form action="member_updatetake&{{Auth::user()->id}}" method="get"  enctype="multipart/form-data">
-                                  <div class="col-md-3" >
-                                      <div class="form-group label-floating">
-                                          <label class="control-label">รุ่นพี่สายเทค</label>
-                                          <select name="take" class="form-control">
-                                              @foreach ($members as $member)
-                                                @if( $member->generation < Auth::user()->generation )
-                                                      <option value="0">No</option>
-                                                      <option value="{{$member->id}}">{{$member->name}}</option>
-                                                @endif
-
-
-                                              @endforeach
-                                          </select>
-
-                                      </div>
-                                  </div>
-                                  <div class="col-md-3" >
-                                      <div class="form-group label-floating">
-                                              @foreach ($members as $member)
-                                                @if(Auth::user()->take == $member->id )
-                                                <label class="control-label">รุ่นพี่สายเทค</label>
-                                                  <h4>{{$member->name}}</h4>
-                                              @endif
-                                              @endforeach
-
-                                      </div>
-                                  </div>
-                                  <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
-                                  <div class="clearfix"></div>
-                                </form>
-
-
-
-
-                                  <div>
-                                    <textarea id="mySavedModel" style="width:100%;height:250px" hidden >
-
-                                { "class": "go.TreeModel",
-
-                                  "nodeDataArray": [
-                                    @foreach ($members as $val)
-                                  {"key":{{$val->id}},"name":"{{$val->name}}", "years":"{{$val->years}}", "gen":"{{$val->generation}}", "parent":{{$val->take}}},
-                                  @endforeach
-
-                                  {"key":{{Auth::user()->id}}, "name":"{{Auth::user()->name}}", "years":"{{Auth::user()->years}}"}
-
-                                 ]
-                                }
-
-                                    </textarea>
-                                  </div>
-                                </div>
-                              </body>
                                 <!-- ====================================/แก้ไขข้อมูลส่วนตัว===================================================== -->
                         </div>
                     </div>

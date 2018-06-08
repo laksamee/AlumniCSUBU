@@ -118,6 +118,7 @@
                                                 @endif
                                             </center>
                                                 <center class="m-t-30"><input type="file" name="admin_img" onchange="showimage.call(this)"></center>
+												<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .PNG,.JPEG)</label>
                                           </div>
                                           <div class="col-md-9">
                                             <div class="row">

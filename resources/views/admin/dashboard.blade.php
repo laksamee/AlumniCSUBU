@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 
 <head>
@@ -278,6 +277,7 @@
                                                 <div class="col-md-3">
                                                       <center class="m-t-30"> <img src="/user/profile/no_img.jpg" id ="adminimg" class="img-circle"  /></center>
                                                         <center class="m-t-30"><input type="file" name="admin_img" onchange="showadminimage.call(this)"></center>
+														<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .PNG,.JPEG)</label>
                                                   </div>
                                                   <div class="col-md-9">
                                                     <div class="row">
@@ -322,6 +322,7 @@
                                                 <div class="col-md-3">
                                                       <img src="/user/profile/no_img.jpg" id ="memberimg" class="img-circle"  />
                                                         <center class="m-t-30"><input type="file" name="image" onchange="showaddimage.call(this)"></center>
+														<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .PNG,.JPEG)</label>
                                                   </div>
                                                   <div class="col-md-9">
                                                     <div class="row">
@@ -378,6 +379,7 @@
                                                         <div class="col-md-3">
                                                           <label>ไฟล์รายงานโครงงาน</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
+														   <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
                                                         </div>
                                                     </div>
                                                   </div>
@@ -391,7 +393,7 @@
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
                                                   <center><video id ="projectvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video></center>
                                                   <input type="file" name="video" onchange="showprojectvideo.call(this)">
-                                                  <label>(.MP4)</label>
+                                                  <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                                 </div>
                                               </div>
                                                 <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
@@ -578,12 +580,14 @@
                                                         <div class="col-md-3">
                                                           <label>เอกสารเพิ่มเติม</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
+														   <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
                                                         </div>
                                                     </div>
                                                   </div>
                                                   <div class="col-md-4">
                                                            <img src="images/noimages.png" id ="newsimg" class="img-thumbnail image" width="80%" height="99%" />
                                                             <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>
+															<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .png,.jpeg)</label>
                                                   </div>
                                               </div>
                                               <div class="row">
@@ -595,7 +599,7 @@
                                                 <div class="col-lg-12 col-xlg-12 col-md-12">
                                                   <center><video id ="newsvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video></center>
                                                   <input type="file" name="video" onchange="shownewsvideo.call(this)">
-                                                  <label>(.MP4)</label>
+                                                  <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                                 </div>
                                               </div>
                                                 <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>

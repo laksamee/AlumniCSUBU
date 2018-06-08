@@ -4,7 +4,7 @@
 <div class="container">
   <div class="container">
     <div class="row">
-        <div class="panel-heading">  <h4 >History</h4></div>
+        <div class="panel-heading">  <h4 >ประวัติ</h4></div>
         <div class="container">
           <div class="row">
           <div class="panel-body">

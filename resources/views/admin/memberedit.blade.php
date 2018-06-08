@@ -116,6 +116,7 @@
                                               <img src="/user/profile/no_img.jpg" id ="memberimg" class="img-circle" width="200" >
                                               @endif</center>
                                                 <center class="m-t-30"><input type="file" name="img" onchange="showaddimage.call(this)"></center>
+                                                <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษ นาสกุลไฟล์ .png,.jpeg)</label>
                                           </div>
                                           <div class="col-md-9">
                                             <div class="row">
@@ -166,6 +167,7 @@
                                                    <a href="user\file\{{$user->senior_project}}"><i class=""></i>{{$user->senior_project}}</a>
                                                 @endif
                                                    <input type="file" name="pdfUpload">
+                                                   <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
                                                 </div>
                                             </div>
                                           </div>
@@ -177,6 +179,7 @@
                                             <video id ="projectvideo" class="img-thumbnail image" src="user\video_project\{{$user->video_project}}" width="80%" height="99%" controls> </video>
                                           </center>
                                           <input type="file" name="video" onchange="showprojectvideo.call(this)">
+                                          <label>(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟลต้องเป็น .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
                                         </div>
                                       </div>
                                         <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
