@@ -126,7 +126,7 @@
                                               <div class="col-md-6">
                                                   <div class="form-group label-floating">
                                                       <label class="control-label">อีเมล</label>
-                                                      <input type="email" name="email" value="{{$topic->email}}" name="name"class="form-control"disabled>
+                                                      <input type="email" name="email" value="{{$topic->email}}" name="name"class="form-control">
                                                   </div>
                                               </div>
                                             </div>
@@ -136,7 +136,7 @@
                                                 <div class="col-md-11">
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">หัวข้อกระทู้สนทนา</label>
-                                                        <textarea row ="10" type="text" name="topic"class="form-control" >{{$topic->topic}}</textarea>
+                                                        <textarea row ="10" type="text" name="topic"class="form-control" required>{{$topic->topic}}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,12 +146,12 @@
                                               <div class="col-md-12">
                                                   <div class="form-group label-floating">
                                                       <label class="control-label">Details</label>
-                                                      <textarea row ="10" type="text" name="detail" class="form-control" >{{$topic->detail}}</textarea>
+                                                      <textarea row ="10" type="text" name="detail" class="form-control" required>{{$topic->detail}}</textarea>
                                                   </div>
 
                                               </div>
                                           </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                        <button type="submit" class="btn btn-primary pull-right">ยืนยัน</button>
                                         <div class="clearfix"></div>
                                     </form>
 

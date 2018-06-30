@@ -25,6 +25,7 @@ class controllermember extends Controller
     $user->name       = Input::get("name");
     $user->email      = Input::get("email");
     $user->years      = Input::get("years");
+	$user->generation = Input::get("generation");
     $user->address    = Input::get("address");
     $pass             = str_random(6);
     $user->password   = Hash::make($pass);
@@ -50,7 +51,7 @@ class controllermember extends Controller
     Mail::send('admin/sendmail/mail_member_add',compact('user','pass'), function($message){
        $message->to(Input::get("email"),Input::get("name"))->subject
           ('ลงทะเบียนสมาชิกศิษย์เก่าสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยอุบลราชธานี');
-       $message->from('laksamee.pr.27@ubu.ac.th','Alumni CS-UBU');
+       $message->from('laksamee.pr.27@ubu.ac.th','CS-UBU Alumni');
     });
     $user->save();
     return Redirect('/dashboard');

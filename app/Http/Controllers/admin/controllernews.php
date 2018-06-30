@@ -48,7 +48,7 @@ class controllernews extends Controller
     $message->to($emails);
     $message->subject
         (Input::get("topic"));
-     $message->from('laksamee.pr.57@ubu.ac.th','Alumni CS UBU');
+     $message->from('laksamee.pr.57@ubu.ac.th','CS-UBU Alumni');
   });
 
   $news->save();

@@ -252,8 +252,8 @@
                                                   </div>
                                                   <div class="col-md-4">
                                                            <img src="images/noimages.png" id ="newsimg"  />
-                                                            <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>  
-															<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .png,.jpeg)</label>															
+                                                            <center class="m-t-30"><input type="file" name="image" onchange="shownewsimage.call(this)"></center>
+															<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .png,.jpeg)</label>
                                                   </div>
                                               </div>
                                               <div class="row">
@@ -261,7 +261,7 @@
                                                   <label>วิดีโอเพิ่มเติม</label>
                                                   <center class="m-t-30">
                                                     <video id ="newsaddvideo" class="img-thumbnail image" src="" width="80%" height="99%" controls></video>
-													
+
                                                   </center>
                                                   <input type="file" name="video" onchange="showaddvideo.call(this)">
 												  <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .mp4 ขนาดความยาวไม่เกิน 10 นาที)</label>
@@ -286,7 +286,7 @@
                                                         <div class="col-md-11">
                                                             <div class="form-group label-floating">
                                                                 <label class="control-label">ชื่อ</label>
-                                                                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" >
+                                                                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,7 +302,7 @@
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
                                                               <label class="control-label">หัวข้อกระทู้สนทนา</label>
-                                                              <input type="text" name="topic"  class="form-control">
+                                                              <input type="text" name="topic"  class="form-control"required>
                                                           </div>
                                                       </div>
                                                     </div>
@@ -310,7 +310,7 @@
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
                                                               <label class="control-label">รายละเอียด</label>
-                                                              <textarea  rows="10" name = "detail" name="name" class="form-control"></textarea>
+                                                              <textarea  rows="10" name = "detail"  class="form-control" required></textarea>
                                                           </div>
                                                       </div>
                                                     </div>

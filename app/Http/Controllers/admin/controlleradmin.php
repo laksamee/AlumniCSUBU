@@ -39,7 +39,7 @@ class controlleradmin extends Controller
           Mail::send('admin/sendmail/mail_admin_add',compact('user','pass'), function($message){
              $message->to(Input::get("email"),Input::get("name"))->subject
                 ('ลงทะเบียนผู้ดูแลระบบ');
-             $message->from('laksamee.pr.27@ubu.ac.th','Alumni CS-UBU');
+             $message->from('laksamee.pr.27@ubu.ac.th','CS-UBU Alumni');
           });
 
     $user->save();

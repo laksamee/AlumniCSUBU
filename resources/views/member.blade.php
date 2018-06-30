@@ -25,7 +25,7 @@
                		<h4><p><span>ปีที่จบการศึกษา</span> : {{$user->years}}</p></h4>
                		<h4><p><span>ที่อยู่</span> : {{$user->address}}</p></h4>
                		<h4><p><span>สถานที่ทำงาน</span> : {{$user->office}}</p></h4>
-                  <h4><p><span>ไฟล์รายงงายโครงาน </span> :
+                  <h4><p><span>ไฟล์รายงายโครงาน </span> :
                     @if($user->senior_project != null)
                      <a href="user\file\{{$user->senior_project}}"><i class=""></i>{{$user->senior_project}}</a>
                   @endif

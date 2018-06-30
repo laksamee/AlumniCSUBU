@@ -322,7 +322,7 @@
                                                 <div class="col-md-3">
                                                       <img src="/user/profile/no_img.jpg" id ="memberimg" class="img-circle"  />
                                                         <center class="m-t-30"><input type="file" name="image" onchange="showaddimage.call(this)"></center>
-														<label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .PNG,.JPEG)</label>
+														                            <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .PNG,.JPEG)</label>
                                                   </div>
                                                   <div class="col-md-9">
                                                     <div class="row">
@@ -379,7 +379,7 @@
                                                         <div class="col-md-3">
                                                           <label>ไฟล์รายงานโครงงาน</label>
                                                            <center class="m-t-30"><input type="file" name="pdfUpload"></center>
-														   <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
+														                                <label class="control-label">(ชื่อไฟล์เป็นภาษาอังกฤษไม่เว้นวรรค นาสกุลไฟล์ .doc,.pdf)</label>
                                                         </div>
                                                     </div>
                                                   </div>
@@ -729,7 +729,7 @@
                                                         <div class="col-md-11">
                                                             <div class="form-group label-floating">
                                                                 <label class="control-label">ชื่อ</label>
-                                                                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" >
+                                                                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -745,7 +745,7 @@
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
                                                               <label class="control-label">หัวข้อกระทู้สนทนา</label>
-                                                              <input type="text" name="topic"  class="form-control">
+                                                              <input type="text" name="topic"  class="form-control" required>
                                                           </div>
                                                       </div>
                                                     </div>
@@ -753,7 +753,7 @@
                                                       <div class="col-md-11">
                                                           <div class="form-group label-floating">
                                                               <label class="control-label">รายละเอียด</label>
-                                                              <textarea  rows="10" name = "detail" name="name" class="form-control"></textarea>
+                                                              <textarea  rows="10" name = "detail" name="name" class="form-control" required></textarea>
                                                           </div>
                                                       </div>
                                                     </div>

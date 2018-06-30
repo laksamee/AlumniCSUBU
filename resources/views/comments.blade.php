@@ -117,7 +117,9 @@
                             <div class="panel-body">
                               <header class="text-left">
                                 <div class="comment-user"><i class="fa fa-user"></i> {{$val->name}}</div>
+                                @if($val->email != null)
                                 <div class="comment-email"><i class="fa fa-envelope"></i> {{$val->email}}</div>
+                                @endif
                               </header><br>
                               <div class="comment-post">
                                 <p>
@@ -155,7 +157,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
                     <label>อีเมล</label>
-                    <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control input-md" data-rule="minlen:3" required>
+                    <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control input-md" data-rule="minlen:3" >
                     <div class="validation"></div>
                   </div>
     						</div>
@@ -184,7 +186,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group">
                     <label>อีเมล</label>
-                    <input type="email" name="email"  class="form-control input-md" data-rule="minlen:3" required>
+                    <input type="email" name="email"  class="form-control input-md" data-rule="minlen:3" >
                     <div class="validation"></div>
                   </div>
     						</div>
